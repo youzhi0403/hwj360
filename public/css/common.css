@@ -1,0 +1,118 @@
+html {
+    font-size: 16px;
+}
+textarea,table,tr,td,div,span,a,input,ul,ol,li,p,h1,h2,h3,h4,h5,h6{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+input[type=number],input[type=reset],input[type=button],input[type=text]{
+    -webkit-appearance:none;
+    border-radius: 0;
+}
+
+ul li{
+    list-style: none;
+}
+a{
+    color: #2f2f2f;
+    text-decoration: none;
+}
+.after:after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.before:before{
+    content: "";
+    display: table;
+    clear: both;
+}
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+
+
+@media screen and (min-width: 481px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 480px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: "Arial", "Microsoft YaHei","Myriad Set Pro", "Helvetica Neue", "Helvetica", sans-serif ;
+}
+body {
+    font-family: "Microsoft YaHei";
+    width:100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #F3F3F3;
+}
+.center_elm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.vertical_center{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+.horizontal_center{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
