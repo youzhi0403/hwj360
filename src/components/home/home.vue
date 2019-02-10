@@ -1,27 +1,30 @@
 <template>
-      <cube-scroll
-        class="home"
-        ref="homeScroll"
-        :options="options"
-      >
-        <div class="home-wrapper">
-          <search></search>
-          <slide></slide>
-          <hwj-nav></hwj-nav>
-          <div content="seckill-wrapper">
-            <seckill></seckill>
-          </div>
-          <welfare></welfare>
-          <first-welfare></first-welfare>
-          <selected-classify></selected-classify>
-          <banner></banner>
-          <brand></brand>
-          <medicines v-bind:ms="CW"></medicines>
-          <medicines :ms="MedicalD"></medicines>
-          <medicines :ms="householdD"></medicines>
-          <medicines :ms="healthF"></medicines>
+  <div>
+    <cube-scroll
+      class="home"
+      ref="homeScroll"
+      :options="options"
+    >
+      <div class="home-wrapper">
+        <search></search>
+        <slide></slide>
+        <hwj-nav></hwj-nav>
+        <div content="seckill-wrapper">
+          <seckill></seckill>
         </div>
-      </cube-scroll>
+        <welfare></welfare>
+        <first-welfare></first-welfare>
+        <selected-classify></selected-classify>
+        <banner></banner>
+        <brand></brand>
+        <medicines v-bind:ms="CW"></medicines>
+        <medicines :ms="MedicalD"></medicines>
+        <medicines :ms="householdD"></medicines>
+        <medicines :ms="healthF"></medicines>
+      </div>
+    </cube-scroll>
+    <download></download>
+  </div>
 </template>
 
 <script>
@@ -36,6 +39,7 @@ import Banner from '../banner/banner'
 import Brand from '../brand/brand'
 import { getCW, getHouseholdD, getHealthF, getMedicalD } from '../../api'
 import Medicines from '../medicines/medicines'
+import Download from '../download/download'
 
 export default {
   name: 'home',
@@ -50,6 +54,7 @@ export default {
     this._getHealthF()
   },
   components: {
+    Download,
     Medicines,
     Brand,
     Banner,
