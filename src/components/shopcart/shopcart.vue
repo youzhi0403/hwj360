@@ -1,12 +1,14 @@
 <template>
     <div class="shopcart">
-      购物车
+      <good></good>
     </div>
 </template>
 
 <script>
+import Good from '../good/good'
 export default {
-  name: 'shopcart'
+  name: 'shopcart',
+  components: { Good }
 }
 </script>
 

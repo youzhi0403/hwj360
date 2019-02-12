@@ -38,7 +38,6 @@ export default {
   methods: {
     /* 修改样式 */
     changeStyle: function (e) {
-      console.log(e.srcElement)
     }
   },
   data () {

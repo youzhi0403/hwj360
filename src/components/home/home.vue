@@ -24,6 +24,7 @@
       </div>
     </cube-scroll>
     <download></download>
+    <good></good>
   </div>
 </template>
 
@@ -40,6 +41,7 @@ import Brand from '../brand/brand'
 import { getCW, getHouseholdD, getHealthF, getMedicalD } from '../../api'
 import Medicines from '../medicines/medicines'
 import Download from '../download/download'
+import Good from '../good/good'
 
 export default {
   name: 'home',
@@ -54,6 +56,7 @@ export default {
     this._getHealthF()
   },
   components: {
+    Good,
     Download,
     Medicines,
     Brand,
@@ -86,11 +89,8 @@ export default {
   methods: {
     _getCW () {
       getCW().then((res) => {
-        console.log('res:', res)
         this.CW = res
         this.CW.title = 'http://m.360hwj.com/images/home_classify_1@2x.png'
-        console.log(this.CW)
-        console.log(this.CW.title)
       })
     },
     _getMedicalD () {

@@ -49,7 +49,6 @@ export default {
         }
         // 初始化scrollData
         this.scrollData = this.data_map[this.selectedLabel]
-        console.log(this.data_map)
         // 初始化tabs
         this.tabs = Object.keys(this.data_map).map(label => ({
           label

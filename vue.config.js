@@ -7,6 +7,7 @@ const householdD = appData.householdD
 const healthF = appData.healthF
 
 const classifyData = require('./classify').data
+const foodData = require('./food')
 
 module.exports = {
   publicPath: './',
@@ -56,6 +57,11 @@ module.exports = {
       app.get('/api/classifyData', function (req, res) {
         res.json({
           data: classifyData
+        })
+      })
+      app.get('/api/foodData', function (req, res) {
+        res.json({
+          data: foodData
         })
       })
     }
