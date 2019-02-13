@@ -10,7 +10,7 @@
     </div>
     <div class="medicines_content">
       <ul class="after" v-if="ms.data">
-        <li class="medicine_item" v-for="(item,index) in ms.data" :key="index">
+        <li class="medicine_item" v-for="(item,index) in ms.data" :key="index" v-on:click.stop.prevent="selectGood">
           <div class="medicine_item_img horizontal_center">
             <img :src="item.src">
           </div>
@@ -27,6 +27,11 @@
 <script>
 export default {
   name: 'medicines',
+  data () {
+    return {
+      goodId: '123'
+    }
+  },
   props: {
     ms: {
       type: Object,
@@ -40,6 +45,12 @@ export default {
   },
   mounted () {
     /* console.log('mounted:', this.ms) */
+  },
+  methods: {
+    selectGood () {
+      console.log('进来selectGood...')
+      this.$router.push({ name: 'good', params: { goodId: this.goodId } })
+    }
   }
 }
 </script>

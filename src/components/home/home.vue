@@ -24,7 +24,6 @@
       </div>
     </cube-scroll>
     <download></download>
-    <good></good>
   </div>
 </template>
 
@@ -41,7 +40,6 @@ import Brand from '../brand/brand'
 import { getCW, getHouseholdD, getHealthF, getMedicalD } from '../../api'
 import Medicines from '../medicines/medicines'
 import Download from '../download/download'
-import Good from '../good/good'
 
 export default {
   name: 'home',
@@ -56,7 +54,6 @@ export default {
     this._getHealthF()
   },
   components: {
-    Good,
     Download,
     Medicines,
     Brand,
@@ -72,7 +69,7 @@ export default {
   data () {
     return {
       options: {
-        click: false,
+        click: true,
         directionLockThreshold: 0
       },
       CW: {},

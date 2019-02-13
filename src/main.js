@@ -7,6 +7,7 @@ import home from './components/home/home'
 import classify from './components/classify/classify'
 import myself from './components/myself/myself'
 import shopcart from './components/shopcart/shopcart'
+import good from './components/good/good'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -15,7 +16,8 @@ const routes = [
   { path: '/home', component: home },
   { path: '/classify', component: classify },
   { path: '/myself', component: myself },
-  { path: '/shopcart', component: shopcart }
+  { path: '/shopcart', component: shopcart },
+  { name: 'good', path: '/good', component: good }
 ]
 const router = new VueRouter({
   routes

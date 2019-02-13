@@ -83,7 +83,6 @@
             {{number}}
           </div>
         </div>
-
         <div class="goodsParameter-box">
           <div class="goodsParameter-box-left">
             商品类型
@@ -198,26 +197,25 @@
         <ul class="footer_left_elms after">
           <li class="footer_left_elm">
             <a class="footer_left_img horizontal_center">
-              <img src="">
+              <p class="icon-hwj-home icon-hwj"></p>
             </a>
             <p class="footer-text">首页</p>
           </li>
 
           <li class="footer_left_elm">
             <a class="footer_left_img horizontal_center">
-              <p class="icon-kefu"></p>
+              <p class="icon-hwj-service icon-hwj"></p>
             </a>
             <p class="footer-text">客服</p>
           </li>
 
           <li class="footer_left_elm">
             <a class="footer_left_img horizontal_center">
-              <p class="icon-cart"></p>
+              <p class="icon-hwj-shopcart icon-hwj"></p>
             </a>
             <p class="footer-text">购物车</p>
             <span class="icon_num" id="shop-cart-count">3</span>
           </li>
-
         </ul>
       </div>
       <div class="footer_right">
@@ -226,7 +224,6 @@
       </div>
     </div>
     <search-com></search-com>
-
   </div>
 </template>
 
@@ -263,6 +260,7 @@ export default {
   },
   created () {
     this.init()
+    console.log('goodId:', this.$route.params.goodId)
   },
   methods: {
     init () {
@@ -520,6 +518,79 @@ export default {
                 height 3rem
               .product_doctorTuijian_price
                 color #D93C27
-
-
+  .footer
+    position fixed
+    max-width 640px
+    width 100%
+    bottom 0
+    display flex
+    justify-content space-around
+    align-items center
+    z-index 9999
+    background-color #fff
+    height 4rem
+    .footer_left
+      width 50%
+      height 100%
+      float left
+      border-top 1px solid #dcdcdc
+      .footer_left_elms
+        width 100%
+        height 100%
+        .footer_left_elm
+          float left
+          width 33%
+          height 100%
+          position relative
+          .footer_left_img
+            display inline-block
+            font-size 1.8rem
+            margin-top 0.5rem
+            width 40%
+            .icon-hwj
+              font-family iconfont
+              speak none
+              font-style normal
+              font-weight normal
+              font-variant normal
+              text-transform none
+              line-height 1
+          .footer-text
+            position absolute
+            bottom 0.2rem
+            width 100%
+            font-size 1rem
+            color #666
+            text-align center
+            -webkit-font-smoothing antialiased
+          .icon_num
+            position absolute
+            top 0.4rem
+            right 0.6rem
+            width 1.2rem
+            height 1.2rem
+            line-height 1.2rem
+            text-align center
+            background-color #D93C27
+            color #fff
+            border-radius 50%
+    .footer_right
+      width 50%
+      height 100%
+      float right
+      .footer_right_elm
+        display inline-block
+        width 50%
+        height 4rem
+        float left
+        text-align center
+        line-height 4rem
+        color #fff
+        font-size 1rem
+      .footer_right_join
+        background url("./join-cart-icon@2x.png") no-repeat center
+        background-size cover
+      .footer_right_buy
+        background url("./buy-icon@2x.png") no-repeat center
+        background-size cover
 </style>
