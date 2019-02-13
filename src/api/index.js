@@ -7,6 +7,9 @@ const getHealthF = get('api/healthF')
 const getClassifyD = get('api/classifyData')
 const getFoodD = get('api/foodData')
 
+const getGoodsList = get('api/goodsList')
+const getType = get('api/type')
+
 export {
   getSeckillGoods,
   getCW,
@@ -14,5 +17,7 @@ export {
   getHouseholdD,
   getHealthF,
   getClassifyD,
-  getFoodD
+  getFoodD,
+  getGoodsList,
+  getType
 }
