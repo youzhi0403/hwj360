@@ -1,8 +1,8 @@
 <template>
     <div class="shopcart">
-      <!--<goods-list></goods-list>-->
+      <goods-list></goods-list>
       <!--<goods-filter></goods-filter>-->
-      <suspend></suspend>
+      <!--<suspend></suspend>-->
     </div>
 </template>
 

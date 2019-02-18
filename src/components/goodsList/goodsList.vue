@@ -1,16 +1,17 @@
+<!--suppress ALL -->
 <template>
   <div class="goodsList">
     <header class="header">
       <div class="selection-container">
-        <div class="selection directionOption">
+        <div class="selection directionOption" @click.stop.prevent="saleCountSort">
           销量
           <i class="myIcon icon-top-bottom"></i>
         </div>
-        <div class="selection directionOption">
+        <div class="selection directionOption" @click.stop.prevent="priceSort">
           价格
           <i class="myIcon icon-top-bottom"></i>
         </div>
-        <div class="selection directionOption">
+        <div class="selection directionOption" @click.stop.prevent="openFilter">
           筛选
           <i class="myIcon icon-filter"></i>
         </div>
@@ -19,7 +20,7 @@
     <div class="product">
       <div class="product_goods">
         <ul class="after" id="haowanjia-goods-wrapper">
-          <li class="product_goods_elm" v-for="(item,index) in goods" :key="index">
+          <li class="product_goods_elm" v-for="(item,index) in showGoods" :key="index">
             <div class="product_elm_img">
               <img :src="item.src">
             </div>
@@ -31,17 +32,34 @@
         </ul>
       </div>
     </div>
+    <!--筛选组件-->
+    <div class="myFilter" v-show="filterIsShow">
+      <goods-filter v-on:finish="finish"></goods-filter>
+    </div>
+    <!--悬浮组件-->
+    <suspend></suspend>
   </div>
 </template>
 
 <script>
 import { getGoodsList } from '../../api'
+import GoodsFilter from '../goodsFilter/goodsFilter'
+import Suspend from '../suspend/suspend'
 
 export default {
   name: 'goodsList',
+  components: { Suspend, GoodsFilter },
   data () {
     return {
-      goods: []
+      goods: [],
+      showGoods: [],
+      filterIsShow: false,
+      selectedType: [],
+      picked: '',
+      minPrice: 0,
+      maxPrice: 0,
+      paramOfPriceSort:'',
+      paramOfSaleCountSort:''
     }
   },
   created () {
@@ -51,8 +69,101 @@ export default {
     init () {
       getGoodsList().then((res) => {
         this.goods = res.data
-        console.log(this.goods)
+        this.showGoods = this.goods
       })
+    },
+    finish (selectedType, picked, minPrice, maxPrice) {
+      this.filterIsShow = false
+      /*过滤价格*/
+      if(maxPrice === '' || minPrice === ''){
+        this.showGoods = this.goods
+      }else{
+        this.showGoods = this.goods.filter((item)=>{
+          if(item.price >= minPrice && item.price <= maxPrice){
+            return item
+          }
+        })
+      }
+      /*过滤是否处方药*/
+      if(picked !== ''){
+        this.showGoods = this.showGoods.filter((item)=>{
+          if(item.description === picked){
+            return item
+          }
+        })
+      }
+      /*过滤品牌*/
+      if(selectedType.length > 0){
+        this.showGoods = this.showGoods.filter((item)=>{
+          for(let i=0;i<selectedType.length;i++){
+            if(selectedType[i] === item.typeId){
+              return item
+            }
+          }
+        })
+      }
+    },
+    openFilter () {
+      this.filterIsShow = true
+    },
+    saleCountSort(){
+      let len = this.showGoods.length
+      if(this.paramOfSaleCountSort ==='' || this.paramOfSaleCountSort === 'desc'){
+        console.log('1')
+        this.paramOfSaleCountSort = 'asc'
+        for(let i=0;i<len-1;i++){
+          for(let j=0;j<len-1-i;j++){
+            if(this.showGoods[j].sellCount > this.showGoods[j+1].sellCount){
+              let temp = this.showGoods[j+1]
+              this.$set(this.showGoods,j+1,this.showGoods[j])
+              this.$set(this.showGoods,j,temp)
+            }
+          }
+        }
+      }else{
+        console.log('2')
+        this.paramOfSaleCountSort = 'desc'
+        for(let i=0;i<len-1;i++){
+          for(let j=0;j<len-1-i;j++){
+            if(this.showGoods[j].sellCount < this.showGoods[j+1].sellCount){
+              let temp = this.showGoods[j+1]
+              this.$set(this.showGoods,j+1,this.showGoods[j])
+              this.$set(this.showGoods,j,temp)
+            }
+          }
+        }
+      }
+    },
+    priceSort(){
+      let len = this.showGoods.length
+      if(this.paramOfPriceSort === '' || this.paramOfPriceSort === 'desc'){
+        this.paramOfPriceSort = 'asc'
+        for(let i=0;i<len-1;i++){
+          for(let j=0;j<len-1-i;j++){
+            if(this.showGoods[j].price > this.showGoods[j+1].price){
+              let temp = this.showGoods[j+1]
+              this.$set(this.showGoods,j+1,this.showGoods[j])
+              this.$set(this.showGoods,j,temp)
+            }
+          }
+        }
+      }else {
+        this.paramOfPriceSort = 'desc'
+        for(let i=0;i<len-1;i++){
+          for(let j=0;j<len-1-i;j++){
+            if(this.showGoods[j].price < this.showGoods[j+1].price){
+              let temp = this.showGoods[j+1]
+              this.$set(this.showGoods,j+1,this.showGoods[j])
+              this.$set(this.showGoods,j,temp)
+            }
+          }
+        }
+      }
+    }
+  },
+  watch: {
+    showGoods(val){
+      console.log('watch..',val)
     }
   }
 }
@@ -137,5 +248,4 @@ export default {
             text-overflow: ellipsis;
           .product_goods_price
             color #D93C27
-
 </style>

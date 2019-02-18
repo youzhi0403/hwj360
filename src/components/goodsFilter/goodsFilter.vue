@@ -6,11 +6,12 @@
         </div>
         <div class="header-title center_elm">
         </div>
-        <div class="finish-btn vertical_center close-popup">
+        <div class="finish-btn vertical_center close-popup" @click.stop.prevent="finish">
           完成
         </div>
       </div>
       <div class="content">
+
         <div class="filter-content">
           <div class="filter-title" @click.stop.prevent="changeBrand">
             品牌
@@ -31,11 +32,11 @@
           </div>
           <div class="filter-container" v-show="typeIsShow">
             <div class="filter-elm">
-              <input type="hidden" value="处方药">
+              <input type="radio" value="处方药" v-model="picked">
               处方药
             </div>
             <div class="filter-elm">
-              <input type="hidden" value="非处方药">
+              <input type="radio" value="非处方药" v-model="picked">
               非处方药
             </div>
           </div>
@@ -48,9 +49,9 @@
           </div>
           <div class="filter-container" v-show="priceIsShow">
             <div class="filter-price">
-              <input type="tel" placeholder="最低价">
+              <input type="tel" placeholder="最低价" v-model="minPrice">
               <span>--</span>
-              <input type="tel" placeholder="最高价">
+              <input type="tel" placeholder="最高价" v-model="maxPrice">
             </div>
           </div>
         </div>
@@ -71,7 +72,10 @@ export default {
       brandIsShow: false,
       typeIsShow: false,
       priceIsShow: false,
-      selectedType: []
+      selectedType: [],
+      picked: '',
+      minPrice: 0,
+      maxPrice: 0
     }
   },
   created () {
@@ -92,6 +96,19 @@ export default {
     },
     changePrice () {
       this.priceIsShow = !this.priceIsShow
+    },
+    finish (event) {
+      /* if (!event._constructed) {
+        return
+      } */
+      this.$emit('finish', this.selectedType, this.picked, this.minPrice, this.maxPrice)
+    }
+  },
+  watch: {
+    'picked': function (val) {
+      console.log(val)
+    },
+    'selectedType': function (old, val) {
     }
   }
 }
@@ -99,6 +116,13 @@ export default {
 
 <style lang="stylus">
 .goodsFilter
+  position fixed
+  left 0
+  top 0
+  bottom 0px
+  z-index 1000
+  width 100%
+  background #eff1f4
   .header
     position relative
     width 100%

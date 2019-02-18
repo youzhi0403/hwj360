@@ -4,121 +4,161 @@
       "src":"http://image.360hwj.com/goods/904456/14dcff9d-2619-47fa-a1ab-bf2b85d9530f!200x200.jpg",
       "name":"逸舒长 氯雷他定片 10mg*6片",
       "price":3.80,
-      "sellCount":40
+      "sellCount":40,
+      "typeId":1,
+      "description":"非处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/907911/ba3127a5-1cce-4b47-96a1-03fc06cc94ff!400x400.jpg",
       "name":"辅舒良 丙酸氟替卡松鼻喷雾剂 120喷",
       "price":71.00,
-      "sellCount":50
+      "sellCount":50,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/929834/210dca60-79cc-4bd2-99c6-1fddc341423c!200x200.jpg",
       "name":"修正 阿莫西林胶囊 0.25g*20粒",
       "price":13.50,
-      "sellCount":60
+      "sellCount":60,
+      "typeId":2,
+      "description":"非处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/M0322/cd2d0920-a368-492a-9cf4-54d76b5f70de!100x100.jpg",
       "name":"步长 龙生蛭胶囊 0.4g*15粒*3板",
       "price":64.00,
-      "sellCount":10
+      "sellCount":10,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/902422/2ffae74f-e154-49f9-95ac-c0d74135bacb!200x200.jpg",
       "name":"康良 头孢拉定胶囊 0.25g*24粒",
       "price":8.00,
-      "sellCount":9
+      "sellCount":9,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/906508/6fcac8df-3e0c-4e7b-a61d-d176cdba6892!200x200.jpg",
       "name":"卓邦 盐酸二甲双胍缓释片（圣邦杰） 0.5g*30片",
       "price":22.00,
-      "sellCount":78
+      "sellCount":78,
+      "typeId":2,
+      "description":"非处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/906593/20020bad-48d8-439b-a570-ab55300d5116!400x400.jpg",
       "name":"白云山 板蓝根颗粒 10g*20包",
       "price":10.00,
-      "sellCount":50
+      "sellCount":50,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/905895/15a34d21-52eb-4609-afb5-415082c2912d!200x200.jpg",
       "name":"立卫克 奥美拉唑肠溶胶囊 20mg*14s",
       "price":3.50,
-      "sellCount":8
+      "sellCount":8,
+      "typeId":2,
+      "description":"非处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/907425/0e6328d9-53d5-4a39-8e2d-a81dbe1fca72!200x200.jpg",
       "name":"万特 氯雷他定片 10mg*6片",
       "price":9.50,
-      "sellCount":7
+      "sellCount":7,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/906053/e798e525-ad42-475c-a4f8-542929300b30!400x400.jpg",
       "name":"南国 浓鼻净 盐酸萘甲唑啉滴鼻液 0.1%  8ml",
       "price":6.50,
-      "sellCount":6
+      "sellCount":6,
+      "typeId":2,
+      "description":"非处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/904456/14dcff9d-2619-47fa-a1ab-bf2b85d9530f!200x200.jpg",
       "name":"逸舒长 氯雷他定片 10mg*6片",
       "price":3.80,
-      "sellCount":46
+      "sellCount":46,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/907911/ba3127a5-1cce-4b47-96a1-03fc06cc94ff!400x400.jpg",
       "name":"辅舒良 丙酸氟替卡松鼻喷雾剂 120喷",
       "price":71.00,
-      "sellCount":99
+      "sellCount":99,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/929834/210dca60-79cc-4bd2-99c6-1fddc341423c!200x200.jpg",
       "name":"修正 阿莫西林胶囊 0.25g*20粒",
       "price":13.50,
-      "sellCount":100
+      "sellCount":100,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/M0322/cd2d0920-a368-492a-9cf4-54d76b5f70de!100x100.jpg",
       "name":"步长 龙生蛭胶囊 0.4g*15粒*3板",
       "price":64.00,
-      "sellCount":101
+      "sellCount":101,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/902422/2ffae74f-e154-49f9-95ac-c0d74135bacb!200x200.jpg",
       "name":"康良 头孢拉定胶囊 0.25g*24粒",
       "price":8.00,
-      "sellCount":102
+      "sellCount":102,
+      "typeId":4,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/906508/6fcac8df-3e0c-4e7b-a61d-d176cdba6892!200x200.jpg",
       "name":"卓邦 盐酸二甲双胍缓释片（圣邦杰） 0.5g*30片",
       "price":22.00,
-      "sellCount":103
+      "sellCount":103,
+      "typeId":2,
+      "description":"非处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/906593/20020bad-48d8-439b-a570-ab55300d5116!400x400.jpg",
       "name":"白云山 板蓝根颗粒 10g*20包",
       "price":10.00,
-      "sellCount":104
+      "sellCount":104,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/905895/15a34d21-52eb-4609-afb5-415082c2912d!200x200.jpg",
       "name":"立卫克 奥美拉唑肠溶胶囊 20mg*14s",
       "price":3.50,
-      "sellCount":405
+      "sellCount":405,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/907425/0e6328d9-53d5-4a39-8e2d-a81dbe1fca72!200x200.jpg",
       "name":"万特 氯雷他定片 10mg*6片",
       "price":9.50,
-      "sellCount":65
+      "sellCount":65,
+      "typeId":2,
+      "description":"处方药"
     },
     {
       "src":"http://image.360hwj.com/goods/906053/e798e525-ad42-475c-a4f8-542929300b30!400x400.jpg",
       "name":"南国 浓鼻净 盐酸萘甲唑啉滴鼻液 0.1%  8ml",
       "price":6.50,
-      "sellCount":50
+      "sellCount":50,
+      "typeId":3,
+      "description":"非处方药"
     }
   ]
 }

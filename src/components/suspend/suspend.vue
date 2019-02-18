@@ -31,7 +31,7 @@ export default {
   name: 'suspend',
   data () {
     return {
-      extend: true
+      extend: false
     }
   },
   methods: {
@@ -47,6 +47,8 @@ export default {
   position fixed
   min-width 100px
   min-height 100px
+  z-index 20
+  bottom 20%
   .open-button
     position absolute
     right -16rem
