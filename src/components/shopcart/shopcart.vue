@@ -1,18 +1,15 @@
 <template>
     <div class="shopcart">
-      <goods-list></goods-list>
-      <!--<goods-filter></goods-filter>-->
-      <!--<suspend></suspend>-->
+      <search-page></search-page>
     </div>
 </template>
 
 <script>
-import GoodsList from '../goodsList/goodsList'
-import GoodsFilter from '../goodsFilter/goodsFilter'
-import Suspend from '../suspend/suspend'
+import SearchCom from '../searchCom/searchCom'
+import SearchPage from '../searchPage/searchPage'
 export default {
   name: 'shopcart',
-  components: { Suspend, GoodsFilter, GoodsList }
+  components: { SearchPage, SearchCom }
 }
 </script>
 
