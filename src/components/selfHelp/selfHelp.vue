@@ -141,6 +141,8 @@ export default {
     apartment () {
       this.bodyShow = false
       this.apartmentShow = true
+
+      this.bodyList = false
     },
     bodyListShow (index) {
       this.bodysShow = this.bodys[index]

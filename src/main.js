@@ -10,6 +10,8 @@ import shopcart from './components/shopcart/shopcart'
 import good from './components/good/good'
 import goodsList from './components/goodsList/goodsList'
 import selfHelp from './components/selfHelp/selfHelp'
+import menuSelect from './components/menu-select/menu-select'
+import goodsListMenu from './components/goodsList-menu/goodsList-menu'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -21,7 +23,9 @@ const routes = [
   { path: '/shopcart', component: shopcart },
   { name: 'good', path: '/good', component: good },
   { name: 'goodsList', path: '/goodsList', component: goodsList },
-  { name: 'selfHelp', path: '/selfHelp', component: selfHelp }
+  { name: 'selfHelp', path: '/selfHelp', component: selfHelp },
+  { name: 'menuSelect', path: '/menuSelect', component: menuSelect },
+  { name: 'goodsListMenu', path: '/goodsListMenu', component: goodsListMenu }
 ]
 const router = new VueRouter({
   routes
