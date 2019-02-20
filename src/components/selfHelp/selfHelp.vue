@@ -62,7 +62,7 @@
               {{item.name}}
             </div>
             <div class="apartment-detail-content">
-              <a class="illness-name" v-for="(item2,index2) in item.arr" :key="index2">
+              <a class="illness-name" v-for="(item2,index2) in item.arr" :key="index2" @click.stop.prevent="locateGoodsList(item2.name)">
                 {{item2.name}}
               </a>
             </div>
@@ -80,7 +80,7 @@
           </div>
         </div>
         <div class="bodyList-cells">
-          <div class="bodyList-cell" v-for="(item,index) in bodysShow.arr" :key="index">
+          <div class="bodyList-cell" v-for="(item,index) in bodysShow.arr" :key="index" @click.stop.prevent="locateGoodsList(item.name)">
             <p>{{item.name}}</p>
           </div>
         </div>
@@ -151,6 +151,10 @@ export default {
     },
     bodyListHide () {
       this.bodyList = false
+    },
+    locateGoodsList (name) {
+      console.log(name)
+      this.$router.push({ name: 'goodsListMenu' })
     }
   }
 }
