@@ -1,6 +1,6 @@
 <template>
     <div class="hwj-nav after">
-      <div class="nav-item" v-for="(item,index) in items" :key="index">
+      <div class="nav-item" v-for="(item,index) in items" :key="index" @click.stop.prevent="item.clickEventName">
         <div class="item-img">
           <img :src="item.img">
         </div>
@@ -19,45 +19,66 @@ export default {
       items: [
         {
           img: 'http://m.360hwj.com/images/0130/1.png',
-          text: '全部分类'
+          text: '全部分类',
+          clickEventName: this.locateToClassify
         },
         {
           img: 'http://m.360hwj.com/images/0130/2.png',
-          text: '自助找药'
+          text: '自助找药',
+          clickEventName: this.locateToSelfHelp
         },
         {
           img: 'http://m.360hwj.com/images/0130/3.png',
-          text: '推广分享'
+          text: '推广分享',
+          clickEventName: this.test
         },
         {
           img: 'http://m.360hwj.com/images/0130/4.png',
-          text: '客服咨询'
+          text: '客服咨询',
+          clickEventName: this.test
         },
         {
           img: 'http://m.360hwj.com/images/0130/5.png',
-          text: '签到有礼'
+          text: '签到有礼',
+          clickEventName: this.test
         },
         {
           img: 'http://m.360hwj.com/images/0130/6.png',
-          text: '男性专区'
+          text: '男性专区',
+          clickEventName: this.test
         },
         {
           img: 'http://m.360hwj.com/images/0130/7.png',
-          text: '女性专区'
+          text: '女性专区',
+          clickEventName: this.test
         },
         {
           img: 'http://m.360hwj.com/images/0130/8.png',
-          text: '中药饮片'
+          text: '中药饮片',
+          clickEventName: this.test
         },
         {
           img: 'http://m.360hwj.com/images/0130/9.png',
-          text: '成人用品'
+          text: '成人用品',
+          clickEventName: this.test
         },
         {
           img: 'http://m.360hwj.com/images/0130/10.png',
-          text: '超值兑换'
+          text: '超值兑换',
+          clickEventName: this.test
         }
       ]
+    }
+  },
+  methods: {
+    locateToClassify () {
+      this.$router.push({ name: 'classify' })
+    },
+    locateToSelfHelp () {
+      this.$router.push({ name: 'selfHelp' })
+    },
+    test () {
+      console.log('test...')
     }
   }
 

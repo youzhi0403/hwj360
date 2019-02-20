@@ -49,10 +49,12 @@ export default {
         }
         // 初始化scrollData
         this.scrollData = this.data_map[this.selectedLabel]
+        console.log('classify-scrollData:', this.scrollData)
         // 初始化tabs
         this.tabs = Object.keys(this.data_map).map(label => ({
           label
         }))
+        console.log('classify-tabs:', this.tabs)
       })
     },
     changeHandler (label) {

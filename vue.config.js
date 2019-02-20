@@ -12,6 +12,9 @@ const goodsList = require('./goodsList').data
 
 const typeData = require('./type')
 
+const illness = require('./illness').data
+const body = require('./body').data
+
 module.exports = {
   publicPath: './',
   css: {
@@ -75,6 +78,16 @@ module.exports = {
       app.get('/api/type', function (req, res) {
         res.json({
           data: typeData
+        })
+      })
+      app.get('/api/illness', function (req, res) {
+        res.json({
+          data: illness
+        })
+      })
+      app.get('/api/body', function (req, res) {
+        res.json({
+          data: body
         })
       })
     }

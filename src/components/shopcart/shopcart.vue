@@ -1,15 +1,13 @@
 <template>
     <div class="shopcart">
-      <search-page></search-page>
     </div>
 </template>
 
 <script>
-import SearchCom from '../searchCom/searchCom'
-import SearchPage from '../searchPage/searchPage'
+import SelfHelp from '../selfHelp/selfHelp'
 export default {
   name: 'shopcart',
-  components: { SearchPage, SearchCom }
+  components: { SelfHelp }
 }
 </script>
 
