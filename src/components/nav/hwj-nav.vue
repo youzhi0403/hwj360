@@ -30,7 +30,7 @@ export default {
         {
           img: 'http://m.360hwj.com/images/0130/3.png',
           text: '推广分享',
-          clickEventName: this.test
+          clickEventName: this.locateToShare
         },
         {
           img: 'http://m.360hwj.com/images/0130/4.png',
@@ -76,6 +76,9 @@ export default {
     },
     locateToSelfHelp () {
       this.$router.push({ name: 'selfHelp' })
+    },
+    locateToShare () {
+      this.$router.push({ name: 'share' })
     },
     test () {
       console.log('test...')

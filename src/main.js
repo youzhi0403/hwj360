@@ -12,6 +12,7 @@ import goodsList from './components/goodsList/goodsList'
 import selfHelp from './components/selfHelp/selfHelp'
 import menuSelect from './components/menu-select/menu-select'
 import goodsListMenu from './components/goodsList-menu/goodsList-menu'
+import share from './components/share/share'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -25,7 +26,8 @@ const routes = [
   { name: 'goodsList', path: '/goodsList', component: goodsList },
   { name: 'selfHelp', path: '/selfHelp', component: selfHelp },
   { name: 'menuSelect', path: '/menuSelect', component: menuSelect },
-  { name: 'goodsListMenu', path: '/goodsListMenu', component: goodsListMenu }
+  { name: 'goodsListMenu', path: '/goodsListMenu', component: goodsListMenu },
+  { name: 'share', path: '/share', component: share }
 ]
 const router = new VueRouter({
   routes
