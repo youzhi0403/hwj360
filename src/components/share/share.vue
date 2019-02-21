@@ -8,7 +8,7 @@
         <div class="user-name">
           {{userInfo.name}}
         </div>
-        <div class="user-asset">
+        <div class="user-asset" @click.stop.prevent="locateAssets">
           <i class="icon-asset vertical_center"></i>
           <div class="asset-text vertical_center">
             我的资产
@@ -106,6 +106,9 @@ export default {
       this.paramOfShareShow = false
       this.paramOfMemberShow = false
       this.paramOfIncomeShow = true
+    },
+    locateAssets () {
+      this.$router.push({ name: 'assets' })
     }
   }
 }

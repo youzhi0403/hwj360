@@ -13,6 +13,7 @@ import selfHelp from './components/selfHelp/selfHelp'
 import menuSelect from './components/menu-select/menu-select'
 import goodsListMenu from './components/goodsList-menu/goodsList-menu'
 import share from './components/share/share'
+import assets from './components/assets/assets'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -27,7 +28,8 @@ const routes = [
   { name: 'selfHelp', path: '/selfHelp', component: selfHelp },
   { name: 'menuSelect', path: '/menuSelect', component: menuSelect },
   { name: 'goodsListMenu', path: '/goodsListMenu', component: goodsListMenu },
-  { name: 'share', path: '/share', component: share }
+  { name: 'share', path: '/share', component: share },
+  { name: 'assets', path: '/assets', component: assets }
 ]
 const router = new VueRouter({
   routes
