@@ -1,6 +1,6 @@
 <template>
     <div class="myself">
-      <div class="header">
+      <div class="myself-header">
         <i class="icon-msg vertical_center"></i>
         <i class="icon-set vertical_center"></i>
       </div>
@@ -183,7 +183,7 @@ export default {
 
 <style lang="stylus">
 .myself
-  .header
+  .myself-header
     position fixed
     width 100%
     max-width 640px

@@ -15,6 +15,8 @@ import goodsListMenu from './components/goodsList-menu/goodsList-menu'
 import share from './components/share/share'
 import assets from './components/assets/assets'
 import signin from './components/signIn/signIn'
+import integralShop from './components/integralShop/integralShop'
+import integralGood from './components/integralGood/integralGood'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -31,7 +33,9 @@ const routes = [
   { name: 'goodsListMenu', path: '/goodsListMenu', component: goodsListMenu },
   { name: 'share', path: '/share', component: share },
   { name: 'assets', path: '/assets', component: assets },
-  { name: 'signin', path: '/signin', component: signin }
+  { name: 'signin', path: '/signin', component: signin },
+  { name: 'integralShop', path: '/integralShop', component: integralShop },
+  { name: 'integralGood', path: '/integralGood', component: integralGood }
 ]
 const router = new VueRouter({
   routes
