@@ -24,6 +24,7 @@
       </div>
     </cube-scroll>
     <download></download>
+    <footer-nav></footer-nav>
   </div>
 </template>
 
@@ -40,6 +41,7 @@ import Brand from '../brand/brand'
 import { getCW, getHouseholdD, getHealthF, getMedicalD } from '../../api'
 import Medicines from '../medicines/medicines'
 import Download from '../download/download'
+import FooterNav from '../footer-nav/footer-nav'
 
 export default {
   name: 'home',
@@ -54,6 +56,7 @@ export default {
     this._getHealthF()
   },
   components: {
+    FooterNav,
     Download,
     Medicines,
     Brand,
@@ -115,4 +118,7 @@ export default {
 <style lang="stylus">
   .home
     overflow hidden
+    padding 0 0 4.1rem 0
+    width 100%
+    max-width 640px
 </style>

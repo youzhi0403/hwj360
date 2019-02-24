@@ -25,10 +25,10 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 const routes = [
   { path: '/', redirect: 'home' },
-  { path: '/home', component: home },
+  { name: 'home', path: '/home', component: home },
   { name: 'classify', path: '/classify', component: classify },
-  { path: '/myself', component: myself },
-  { path: '/shopcart', component: shopcart },
+  { name: 'myself', path: '/myself', component: myself },
+  { name: 'shopcart', path: '/shopcart', component: shopcart },
   { name: 'good', path: '/good', component: good },
   { name: 'goodsList', path: '/goodsList', component: goodsList },
   { name: 'selfHelp', path: '/selfHelp', component: selfHelp },

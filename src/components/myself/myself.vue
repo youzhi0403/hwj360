@@ -172,12 +172,15 @@
           </div>
         </div>
       </div>
+      <footer-nav></footer-nav>
     </div>
 </template>
 
 <script>
+import FooterNav from '../footer-nav/footer-nav'
 export default {
-  name: 'myself'
+  name: 'myself',
+  components: { FooterNav }
 }
 </script>
 
@@ -206,6 +209,7 @@ export default {
       right 1rem
   .myself-content
     width 100%
+    margin-bottom 4.6rem
     .personal-top
       width 100%
       position relative

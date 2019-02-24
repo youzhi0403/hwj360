@@ -1,16 +1,16 @@
 <template>
     <div class="shopcart">
-      <menu-select></menu-select>
+      <footer-nav></footer-nav>
     </div>
 </template>
 
 <script>
-import SelfHelp from '../selfHelp/selfHelp'
-import GoodsListMenu from '../goodsList-menu/goodsList-menu'
-import MenuSelect from '../menu-select/menu-select'
+import FooterNav from '../footer-nav/footer-nav'
 export default {
   name: 'shopcart',
-  components: { MenuSelect, GoodsListMenu, SelfHelp }
+  components: {
+    FooterNav
+  }
 }
 </script>
 
