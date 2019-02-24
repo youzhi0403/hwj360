@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="goods-integral-content after">
-          <div class="goods-integral-item" v-for="(item,index) in integralGoods" :key="index">
+          <div class="goods-integral-item" v-for="(item,index) in integralGoods" :key="index" @click.stop.prevent="locateIntegralGood">
             <div class="goods-integral-img">
               <img :src="item.img">
             </div>
@@ -101,6 +101,9 @@ export default {
     },
     hideRule () {
       this.ruleShow = false
+    },
+    locateIntegralGood () {
+      this.$router.push({ name: 'integralGood' })
     }
   },
   created () {

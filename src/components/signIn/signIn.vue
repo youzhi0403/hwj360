@@ -23,7 +23,7 @@
 
     <!--积分商城-->
     <div class="integral-shop">
-      <div class="fl">
+      <div class="fl" @click.stop.prevent="locateIntegralShop">
         <img src="./integral-shop@2x.png">
       </div>
       <div class="fr">
@@ -155,8 +155,10 @@ export default {
     },
     showRule () {
       this.ruleShow = true
+    },
+    locateIntegralShop () {
+      this.$router.push({ name: 'integralShop' })
     }
-
   }
 }
 </script>

@@ -17,6 +17,9 @@ import assets from './components/assets/assets'
 import signin from './components/signIn/signIn'
 import integralShop from './components/integralShop/integralShop'
 import integralGood from './components/integralGood/integralGood'
+import address from './components/address/address'
+import addressAdd from './components/addressAdd/addressAdd'
+import addressPicker from './components/addressPicker/addressPicker'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -35,7 +38,10 @@ const routes = [
   { name: 'assets', path: '/assets', component: assets },
   { name: 'signin', path: '/signin', component: signin },
   { name: 'integralShop', path: '/integralShop', component: integralShop },
-  { name: 'integralGood', path: '/integralGood', component: integralGood }
+  { name: 'integralGood', path: '/integralGood', component: integralGood },
+  { name: 'address', path: '/address', component: address },
+  { name: 'addressAdd', path: '/addressAdd', component: addressAdd },
+  { name: 'addressPicker', path: '/addressPicker', component: addressPicker }
 ]
 const router = new VueRouter({
   routes

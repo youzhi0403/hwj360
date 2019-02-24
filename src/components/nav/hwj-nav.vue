@@ -40,7 +40,7 @@ export default {
         {
           img: 'http://m.360hwj.com/images/0130/5.png',
           text: '签到有礼',
-          clickEventName: this.test
+          clickEventName: this.locateToSignin
         },
         {
           img: 'http://m.360hwj.com/images/0130/6.png',
@@ -82,6 +82,9 @@ export default {
     },
     test () {
       console.log('test...')
+    },
+    locateToSignin () {
+      this.$router.push({ name: 'signin' })
     }
   }
 

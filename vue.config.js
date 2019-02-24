@@ -16,6 +16,8 @@ const illness = require('./illness').data
 const body = require('./body').data
 const integralGoods = require('./integralGoods').data
 
+const city = require('./city').data
+
 module.exports = {
   publicPath: './',
   css: {
@@ -94,6 +96,11 @@ module.exports = {
       app.get('/api/integralGoods', function (req, res) {
         res.json({
           data: integralGoods
+        })
+      })
+      app.get('/api/city', function (req, res) {
+        res.json({
+          data: city
         })
       })
     }

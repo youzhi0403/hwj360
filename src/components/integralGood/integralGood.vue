@@ -16,7 +16,7 @@
         <i class="icon-triangle vertical_center"></i>
         <div class="address-text vertical_center">
           配送至:
-          <input type="text" readonly placeholder="您还未填写收货信息,马上填写。"/>
+          <input type="text" readonly placeholder="您还未填写收货信息,马上填写。" @click.stop.prevent="locateAddress"/>
         </div>
       </div>
     </div>
@@ -59,6 +59,11 @@ export default {
         needIntegral: '500积分',
         price: '￥5.00'
       }
+    }
+  },
+  methods: {
+    locateAddress () {
+      this.$router.push({ name: 'address' })
     }
   }
 }
@@ -147,7 +152,6 @@ export default {
       margin 0 5%
       padding 1rem 0
       border-top 0.01rem solid #ebebeb
-
   .change-submit
     background-color #fff
     width 100%

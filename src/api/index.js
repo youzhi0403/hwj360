@@ -12,6 +12,7 @@ const getType = get('api/type')
 const getIllness = get('api/illness')
 const getBody = get('api/body')
 const getIntegralGoods = get('api/integralGoods')
+const getCity = get('api/city')
 
 export {
   getSeckillGoods,
@@ -25,5 +26,6 @@ export {
   getType,
   getIllness,
   getBody,
-  getIntegralGoods
+  getIntegralGoods,
+  getCity
 }
