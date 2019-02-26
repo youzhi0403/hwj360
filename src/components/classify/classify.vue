@@ -13,10 +13,10 @@
               <h1 class="title">{{item.name}}</h1>
               <ul class="after">
                 <li v-for="(item2,index2) in item.arr" :key="index2">
-                  <div class="item2_img">
+                  <div class="item2-img">
                     <img :src="item2.img">
                   </div>
-                  <p class="item2_text">{{item2.name}}</p>
+                  <p class="item2-text">{{item2.name}}</p>
                 </li>
               </ul>
             </li>
@@ -130,7 +130,7 @@ export default {
             float left
             width 33%
             height 8rem
-            .item2_img
+            .item2-img
               width 4rem
               height 4rem
               border-radius 50%
@@ -140,7 +140,7 @@ export default {
               img
                 width 100%
                 vertical-align middle
-            .item2_text
+            .item2-text
               width 100%
               text-align center
               padding-bottom 1rem

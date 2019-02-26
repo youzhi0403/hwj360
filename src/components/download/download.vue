@@ -1,16 +1,16 @@
 <template>
   <div class="download after" v-show="isShow">
-    <div class="app-icon vertical_center">
+    <div class="app-icon vertical-center">
       <img :src="img">
     </div>
-    <div class="download-text vertical_center">
+    <div class="download-text vertical-center">
       <p class="download-text-title">好万家APP</p>
       <small>关注公众号,买药更实惠</small>
     </div>
-    <div class="download-btn vertical_center">
+    <div class="download-btn vertical-center">
       客户端下载
     </div>
-    <i class="download-close vertical_center" v-on:click.stop.prevent="hide"></i>
+    <i class="download-close vertical-center" v-on:click.stop.prevent="hide"></i>
   </div>
 </template>
 
@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     hide () {
-      console.log('执行了hide方法.')
       this.isShow = false
     }
   }

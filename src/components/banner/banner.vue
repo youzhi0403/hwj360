@@ -7,15 +7,16 @@
 <script>
 export default {
   name: 'banner',
-  data () {
-    return {
-      img: 'http://static.360hwj.com/group1/M00/05/C1/J2zAA1qrhUqAQThSAAIGfTUeTp4019.jpg'
+  props: {
+    img: {
+      type: String,
+      default: ''
     }
   }
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .banner
   margin-top 0.5rem
   background-color #fff

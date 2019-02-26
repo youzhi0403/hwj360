@@ -1,21 +1,21 @@
 <template>
-  <div class="seckill">
-    <div class="seckill-title">
-      <i class="seckill-img"></i>
+  <div class="secondKill">
+    <div class="secondKill-title">
+      <i class="secondKill-img"></i>
       <span class="btn-more">
         更多
         <i class="icon-more-red"></i>
       </span>
     </div>
-    <div class="seckill-content">
+    <div class="secondKill-content">
       <cube-scroll
-        class="seckill-wrapper"
-        ref="seckillScroll"
-        :data="seckillGoods"
+        class="secondKill-wrapper"
+        ref="secondKillScroll"
+        :data="secondKillGoods"
         direction="horizontal"
       >
-        <ul class="seckill-list">
-          <li class="seckill-item" v-for="(item,index) in seckillGoods" :key="index">
+        <ul class="secondKill-list">
+          <li class="secondKill-item" v-for="(item,index) in secondKillGoods" :key="index">
             <div class="item-img">
               <img :src="item.src">
             </div>
@@ -34,22 +34,22 @@
 import { getSeckillGoods } from '../../api'
 
 export default {
-  name: 'seckill',
+  name: 'secondKill',
   created () {
     this._getSeckillGoods()
     this.$nextTick(() => {
-      this.$refs.seckillScroll.refresh()
+      this.$refs.secondKillScroll.refresh()
     })
   },
   data () {
     return {
-      seckillGoods: []
+      secondKillGoods: []
     }
   },
   methods: {
     _getSeckillGoods () {
-      getSeckillGoods().then((seckillGoods) => {
-        this.seckillGoods = seckillGoods.data
+      getSeckillGoods().then((secondKillGoods) => {
+        this.secondKillGoods = secondKillGoods.data
       })
     }
   }
@@ -57,12 +57,12 @@ export default {
 </script>
 
 <style lang="stylus">
-.seckill
+.secondKill
   position relative
   margin-top 0.6rem
   background-color #fff
   width 100%
-  .seckill-title
+  .secondKill-title
     width 100%
     padding 0.6rem 0
     &:before
@@ -73,7 +73,7 @@ export default {
       clear both
       content ''
       display block
-    .seckill-img
+    .secondKill-img
       display inline-block
       float left
       width 5rem
@@ -95,16 +95,15 @@ export default {
         background url("home_clas_more_red@2x.png") no-repeat center
         -webkit-background-size contain
         background-size contain
-
-  .seckill-content
+  .secondKill-content
     width 100%
     height 10rem
-    .seckill-wrapper
+    .secondKill-wrapper
       display flex
       align-items center
-      .seckill-list
+      .secondKill-list
         white-space nowrap
-        .seckill-item
+        .secondKill-item
           width 7.5rem
           padding-bottom 0.6rem
           display inline-block

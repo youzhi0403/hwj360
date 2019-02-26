@@ -1,20 +1,20 @@
 <template>
   <div class="medicines">
-    <div class="medicines_top">
-      <p class="top_content center_elm">
+    <div class="medicines-top">
+      <p class="top-content center-elm">
         <img :src="ms.title" v-if="ms.title">
       </p>
-      <p class="top_icon">
-        <em class="vertical_center right_icon"></em>
+      <p class="top-icon">
+        <em class="vertical-center right-icon"></em>
       </p>
     </div>
-    <div class="medicines_content">
+    <div class="medicines-content">
       <ul class="after" v-if="ms.data">
-        <li class="medicine_item" v-for="(item,index) in ms.data" :key="index" v-on:click.stop.prevent="selectGood">
-          <div class="medicine_item_img horizontal_center">
+        <li class="medicine-item" v-for="(item,index) in ms.data" :key="index" v-on:click.stop.prevent="selectGood">
+          <div class="medicine-item-img horizontal-center">
             <img :src="item.src">
           </div>
-          <div class="medicine_item_text">
+          <div class="medicine-item-text">
             <p>{{item.name}}</p>
             <p class="price">￥{{item.price}}</p>
           </div>
@@ -60,18 +60,18 @@ export default {
   width 100%
   background-color #fff
   margin-top 0.6rem
-  .medicines_top
+  .medicines-top
     position relative
     width 100%
     height 3rem
     line-height 3rem
-    .top_content
+    .top-content
       padding-left 1rem
       width 9rem
       img
         width 100%
         vertical-align middle
-    .top_icon
+    .top-icon
       height 3rem
       padding-right 3rem
       position relative
@@ -79,7 +79,7 @@ export default {
       white-space nowrap
       overflow hidden
       text-overflow ellipsis
-      .right_icon
+      .right-icon
         right 1.5rem
         top 50%
         position absolute
@@ -87,7 +87,7 @@ export default {
         height 1.3rem
         background url("./right_icon.png") no-repeat center
         background-size cover
-  .medicines_content
+  .medicines-content
     width 100%
     ul
       width 100%
@@ -95,7 +95,7 @@ export default {
       box-sizing border-box
       border-right 1px solid #F3F3F3
       border-bottom 1px solid #F3F3F3
-      .medicine_item
+      .medicine-item
         float left
         box-sizing border-box
         width 50%
@@ -103,14 +103,14 @@ export default {
         position relative
         border-left 1px solid #F3F3F3
         border-top 1px solid #F3F3F3
-        .medicine_item_img
+        .medicine-item-img
           width 55%
           height 5rem
           top 1rem
           img
             width 100%
             vertical-align middle
-        .medicine_item_text
+        .medicine-item-text
           position absolute
           width 100%
           height 4.5rem
