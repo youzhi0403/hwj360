@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="home">
     <cube-scroll
-      class="home"
+      class="home-scroll"
       ref="homeScroll"
       :options="options"
     >
@@ -84,6 +84,7 @@ export default {
   mounted () {
     this.$nextTick(() => {
       this.$refs.homeScroll.refresh()
+      console.log('refresh过了..')
     })
   },
   methods: {
@@ -117,8 +118,14 @@ export default {
 
 <style lang="stylus">
   .home
-    overflow hidden
-    padding 0 0 4.1rem 0
+    position absolute
+    top 0
+    bottom 3.5rem
+    left 0
     width 100%
     max-width 640px
+    overflow hidden
+    .home-scroll
+      position relative
+      height 100%
 </style>
