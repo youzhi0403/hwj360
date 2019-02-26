@@ -7,7 +7,7 @@ textarea,table,tr,td,div,span,a,input,ul,ol,li,p,h1,h2,h3,h4,h5,h6{
     box-sizing: border-box;
 }
 
-input[type=number],input[type=reset],input[type=button],input[type=text]{
+input[type="number"],input[type="reset"],input[type="button"],input[type="text"]{
     -webkit-appearance:none;
     border-radius: 0;
 }
@@ -115,4 +115,33 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button{
     -webkit-appearance: none !important;
     margin: 0;
+}
+
+.center-elm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.vertical-center{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+.horizontal-center{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
 }

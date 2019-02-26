@@ -1,0 +1,15 @@
+html规范：
+1.img标签要写alt属性
+2.单标签不要写闭合标签
+如<input />应改为<input>
+
+
+css规范：
+1.class命名使用中线划分，推荐slide-hd而不推荐slide_hd
+2.避免为0值指定单位，用margin 0 代替 margin 0px
+3.为选择器中的属性添加双引号,如input[type="text"]
+4.16进制的值全部小写，例如#fff。
+5.尽量使用简写形式的十六进制的值，例如用#fff代替#ffffff
+6.去掉小数点前的0，如 0.5 改为 .5
+
+

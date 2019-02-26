@@ -1,12 +1,14 @@
 <template>
   <div class="home">
+    <topComponent ref="topComponent"></topComponent>
     <cube-scroll
       class="home-scroll"
       ref="homeScroll"
       :options="options"
+      :scrollEvents="eventsArr"
+      @scroll="onScrollHandle"
     >
       <div class="home-wrapper">
-        <search></search>
         <slide></slide>
         <hwj-nav></hwj-nav>
         <div content="seckill-wrapper">
@@ -29,7 +31,6 @@
 </template>
 
 <script>
-import search from '../search/search'
 import slide from '../slide/slide'
 import nav from '../nav/hwj-nav'
 import seckill from '../seckill/seckill'
@@ -42,6 +43,8 @@ import { getCW, getHouseholdD, getHealthF, getMedicalD } from '../../api'
 import Medicines from '../medicines/medicines'
 import Download from '../download/download'
 import FooterNav from '../footer-nav/footer-nav'
+
+import topComponent from '../topComponent/topComponent'
 
 export default {
   name: 'home',
@@ -56,6 +59,7 @@ export default {
     this._getHealthF()
   },
   components: {
+    'topComponent': topComponent,
     FooterNav,
     Download,
     Medicines,
@@ -64,7 +68,6 @@ export default {
     SelectedClassify,
     FirstWelfare,
     Welfare,
-    'search': search,
     'slide': slide,
     'hwj-nav': nav,
     'seckill': seckill
@@ -72,22 +75,31 @@ export default {
   data () {
     return {
       options: {
-        click: true,
-        directionLockThreshold: 0
+        click: true
       },
+      eventsArr: ['scroll'],
       CW: {},
       MedicalD: {},
       householdD: {},
-      healthF: {}
+      healthF: {},
+      topComponentActive: false
     }
   },
   mounted () {
     this.$nextTick(() => {
       this.$refs.homeScroll.refresh()
-      console.log('refresh过了..')
     })
   },
   methods: {
+    onScrollHandle (pos) {
+      if (pos.y < -50 && this.topComponentActive === false) {
+        this.topComponentActive = true
+        this.$refs['topComponent'].changeState(this.topComponentActive)
+      } else if (pos.y > -50 && this.topComponentActive === true) {
+        this.topComponentActive = false
+        this.$refs['topComponent'].changeState(this.topComponentActive)
+      }
+    },
     _getCW () {
       getCW().then((res) => {
         this.CW = res
