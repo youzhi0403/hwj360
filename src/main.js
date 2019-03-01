@@ -23,6 +23,7 @@ import addressAdd from './components/addressAdd/addressAdd'
 import addressPicker from './components/addressPicker/addressPicker'
 import testComponent from './components/testComponent/testComponent'
 import testComponentP from './components/testComponent/testComponentP'
+import shopcartPopup from './components/shopcartPopup/shopcartPopup'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -46,7 +47,8 @@ const routes = [
   { name: 'addressAdd', path: '/addressAdd', component: addressAdd },
   { name: 'addressPicker', path: '/addressPicker', component: addressPicker },
   { name: 'testComponent', path: '/testComponent', component: testComponent },
-  { name: 'testComponentP', path: '/testComponentP', component: testComponentP }
+  { name: 'testComponentP', path: '/testComponentP', component: testComponentP },
+  { name: 'shopcartPopup', path: '/shopcartPopup', component: shopcartPopup }
 ]
 const router = new VueRouter({
   routes
