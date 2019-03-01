@@ -109,7 +109,6 @@ export default {
     saleCountSort(){
       let len = this.showGoods.length
       if(this.paramOfSaleCountSort ==='' || this.paramOfSaleCountSort === 'desc'){
-        console.log('1')
         this.paramOfSaleCountSort = 'asc'
         for(let i=0;i<len-1;i++){
           for(let j=0;j<len-1-i;j++){
@@ -121,7 +120,6 @@ export default {
           }
         }
       }else{
-        console.log('2')
         this.paramOfSaleCountSort = 'desc'
         for(let i=0;i<len-1;i++){
           for(let j=0;j<len-1-i;j++){

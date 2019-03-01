@@ -2,6 +2,7 @@ import Vue from 'vue'
 import './cube-ui'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import './register'
 
 import home from './components/home/home'
 import classify from './components/classify/classify'
@@ -10,8 +11,8 @@ import shopcart from './components/shopcart/shopcart'
 import good from './components/good/good'
 import goodsList from './components/goodsList/goodsList'
 import selfHelp from './components/selfHelp/selfHelp'
-import menuSelect from './components/menu-select/menu-select'
-import goodsListMenu from './components/goodsList-menu/goodsList-menu'
+import menuSelect from './components/menuSelect/menuSelect'
+import goodsListMenu from './components/goodsListMenu/goodsListMenu'
 import share from './components/share/share'
 import assets from './components/assets/assets'
 import signin from './components/signIn/signIn'
@@ -20,6 +21,8 @@ import integralGood from './components/integralGood/integralGood'
 import address from './components/address/address'
 import addressAdd from './components/addressAdd/addressAdd'
 import addressPicker from './components/addressPicker/addressPicker'
+import testComponent from './components/testComponent/testComponent'
+import testComponentP from './components/testComponent/testComponentP'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -41,7 +44,9 @@ const routes = [
   { name: 'integralGood', path: '/integralGood', component: integralGood },
   { name: 'address', path: '/address', component: address },
   { name: 'addressAdd', path: '/addressAdd', component: addressAdd },
-  { name: 'addressPicker', path: '/addressPicker', component: addressPicker }
+  { name: 'addressPicker', path: '/addressPicker', component: addressPicker },
+  { name: 'testComponent', path: '/testComponent', component: testComponent },
+  { name: 'testComponentP', path: '/testComponentP', component: testComponentP }
 ]
 const router = new VueRouter({
   routes

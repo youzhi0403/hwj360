@@ -1,6 +1,6 @@
 <template>
     <div class="goodsFilter">
-      <div class="header">
+      <div class="goodsFilter-header">
         <div class="reset-btn vertical_center">
           重置
         </div>
@@ -10,7 +10,7 @@
           完成
         </div>
       </div>
-      <div class="content">
+      <div class="goodsFilter-content">
 
         <div class="filter-content">
           <div class="filter-title" @click.stop.prevent="changeBrand">
@@ -123,7 +123,7 @@ export default {
   z-index 1000
   width 100%
   background #eff1f4
-  .header
+  .goodsFilter-header
     position relative
     width 100%
     max-width 640px
@@ -142,11 +142,13 @@ export default {
     .finish-btn
       right 1.5rem
       color #ed4529
-  .content
+  .goodsFilter-content
     padding 0
     padding-top 1rem
     background-color #fff
     float left
+    width 100%
+    max-width 640px
     .filter-content
       float left
       width 100%

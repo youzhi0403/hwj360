@@ -14,64 +14,72 @@
     <!--科室-->
     <div class="tab-selection-apartment" v-show="apartmentShow">
       <div class="left-panel">
-        <cube-scroll>
-          <cube-tab-bar v-model="selectedLabel" :data="tabs" @change="changeHandler"></cube-tab-bar>
-        </cube-scroll>
-      </div>
-      <div class="right-panel">
-        <cube-scroll ref="illnessScroll">
-          <ul class="after">
-            <li class="apartment-detail" v-for="(item,index) in scrollData" :key="index" ref="myTest">
-              <div class="apartment-detail-title">
-                {{item.name}}
-              </div>
-              <div class="apartment-detail-content">
-                <a class="illness-name" v-for="(item2,index2) in item.arr" :key="index2" @click.stop.prevent="locateGoodsList(item2.name)">
-                  {{item2.name}}
-                </a>
-              </div>
+        <div class="tab-wrapper" ref="tabScroll">
+          <ul class="tab-bar">
+            <li class="tab-bar-item" v-for="(item,index) in tabs" :key="index" @click.stop.prevent="changeHandler(index)" :class="{'tab-bar_active':index === tabIndex}">
+              {{item.name}}
             </li>
           </ul>
-        </cube-scroll>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="illness-wrapper" ref="illnessScroll">
+          <ul class="after">
+            <li v-for="(item,index) in scrollData" :key="index" v-show="index === tabIndex">
+              <ul>
+                <li class="apartment-detail" v-for="(item2,index2) in item" :key="index2">
+                  <div class="apartment-detail-title">
+                    {{item2.name}}
+                  </div>
+                  <div class="apartment-detail-content">
+                    <a class="illness-name" v-for="(item3,index3) in item2.arr" :key="index3" @click.stop.prevent="locateGoodsList(item2.name,item3.name,index,index2,index3)">
+                      {{item3.name}}
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <!--部位-->
     <div class="tab-selection-body" v-show="bodyShow">
       <img src="./body.png" alt="body">
-      <div class="body-apartment part-12 apartment-1" @click.stop.prevent="showPicker(0)">
+      <div class="body-apartment part-12 apartment-1" @click.stop.prevent="showPicker(0,'神经血液系统')">
         <a href="#" class="center-elm">神经血液系统</a>
       </div>
-      <div class="body-apartment part-2 apartment-2" @click.stop.prevent="showPicker(1)">
+      <div class="body-apartment part-2 apartment-2" @click.stop.prevent="showPicker(1,'眼睛')">
         <a href="#" class="center-elm">眼睛</a>
       </div>
-      <div class="body-apartment part-3 apartment-3" @click.stop.prevent="showPicker(2)">
+      <div class="body-apartment part-3 apartment-3" @click.stop.prevent="showPicker(2,'鼻子')">
         <a href="#" class="center-elm">鼻子</a>
       </div>
-      <div class="body-apartment part-4 apartment-4" @click.stop.prevent="showPicker(3)">
+      <div class="body-apartment part-4 apartment-4" @click.stop.prevent="showPicker(3,'耳朵')">
         <a href="#" class="center-elm">耳朵</a>
       </div>
-      <div class="body-apartment part-8 apartment-5" @click.stop.prevent="showPicker(4)">
+      <div class="body-apartment part-8 apartment-5" @click.stop.prevent="showPicker(4,'腹部')">
         <a href="#" class="center-elm">腹部</a>
       </div>
-      <div class="body-apartment part-9 apartment-6" @click.stop.prevent="showPicker(5)">
+      <div class="body-apartment part-9 apartment-6" @click.stop.prevent="showPicker(5,'生殖、肝部')">
         <a href="#" class="center-elm">生殖、肝部</a>
       </div>
-      <div class="body-apartment part-1 apartment-7" @click.stop.prevent="showPicker(6)">
+      <div class="body-apartment part-1 apartment-7" @click.stop.prevent="showPicker(6,'头部')">
         <a href="#" class="center-elm">头部</a>
       </div>
-      <div class="body-apartment part-6 apartment-8" @click.stop.prevent="showPicker(7)">
+      <div class="body-apartment part-6 apartment-8" @click.stop.prevent="showPicker(7,'颈肩部')">
         <a href="#" class="center-elm">颈肩部</a>
       </div>
-      <div class="body-apartment part-5 apartment-9" @click.stop.prevent="showPicker(8)">
+      <div class="body-apartment part-5 apartment-9" @click.stop.prevent="showPicker(8,'口咽部')">
         <a href="#" class="center-elm">口咽部</a>
       </div>
-      <div class="body-apartment part-7 apartment-10" @click.stop.prevent="showPicker(9)">
+      <div class="body-apartment part-7 apartment-10" @click.stop.prevent="showPicker(9,'胸部')">
         <a href="#" class="center-elm">胸部</a>
       </div>
-      <div class="body-apartment part-10 apartment-11" @click.stop.prevent="showPicker(10)">
+      <div class="body-apartment part-10 apartment-11" @click.stop.prevent="showPicker(10,'四肢')">
         <a href="#" class="center-elm">四肢</a>
       </div>
-      <div class="body-apartment part-11 apartment-12" @click.stop.prevent="showPicker(11)">
+      <div class="body-apartment part-11 apartment-12" @click.stop.prevent="showPicker(11,'皮肤')">
         <a href="#" class="center-elm">皮肤</a>
       </div>
     </div>
@@ -80,6 +88,7 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 import { getIllness, getBody } from '../../api'
 
 export default {
@@ -91,56 +100,58 @@ export default {
       selectedLabel: '内科',
       scrollData: [],
       tabs: [],
+      tabIndex: 0,
       data_map: {},
       bodys: [],
-      bodysShow: []
+      illness: [],
+      illness2: [],
+      bodysShow: [],
+      classifyIndex: 0,
+      classifyVal: ''
     }
   },
   created () {
     this.init()
   },
   mounted () {
-
+    this.$nextTick(() => {
+      this._initScroll()
+      console.log(this.illnessScroll)
+    })
   },
   methods: {
+    _initScroll () {
+      this.tabScroll = new BScroll(this.$refs['tabScroll'], {
+        click: true
+      })
+      this.illnessScroll = new BScroll(this.$refs['illnessScroll'], {
+        click: true
+      })
+    },
     init () {
       getIllness().then((res) => {
-        for (let i = 0; i < res.data.length; i++) {
-          this.data_map[res.data[i].name] = res.data[i].classification
+        this.illness = res.data
+        for (let i = 0; i < this.illness.length; i++) {
+          this.tabs.push({ name: this.illness[i].name })
         }
-        // 初始化scrollData
-        this.scrollData = this.data_map[this.selectedLabel]
-        // 初始化tabs
-        this.tabs = Object.keys(this.data_map).map(label => ({
-          label
-        }))
-
-        let current = this
-        setTimeout(function () {
-          current.$nextTick(() => {
-            current.$refs.illnessScroll.refresh()
-          })
-        }, 500)
-        setTimeout(function () {
-          current.$nextTick(() => {
-            current.$refs.illnessScroll.refresh()
-          })
-        }, 1000)
-        setTimeout(function () {
-          current.$nextTick(() => {
-            current.$refs.illnessScroll.refresh()
-          })
-        }, 1500)
+        for (let i = 0; i < this.illness.length; i++) {
+          this.scrollData.push(this.illness[i].arr)
+        }
+        for (let i = 0; i < this.illness.length; i++) {
+          for (let j = 0; j < this.illness[i].arr.length; j++) {
+            this.illness2.push(this.illness[i].arr[j])
+          }
+        }
       })
       getBody().then((res) => {
         this.bodys = res.data
       })
     },
-    changeHandler (label) {
-      this.scrollData = this.data_map[label]
+    changeHandler (index) {
+      this.tabIndex = index
       this.$nextTick(() => {
-        this.$refs.illnessScroll.scrollTo(0, 0)
-        this.$refs.illnessScroll.refresh()
+        this.illnessScroll.refresh()
+        this.illnessScroll.scrollTo(0, 0)
       })
     },
     body () {
@@ -151,14 +162,35 @@ export default {
       this.bodyShow = false
       this.apartmentShow = true
     },
-    locateGoodsList (name) {
-      console.log(name)
-      this.$router.push({ name: 'goodsListMenu' })
+    locateGoodsList (level1, level2, index, level1Index, level2Index) {
+      console.log('leve11:', level1)
+      console.log('level2:', level2)
+      console.log('level1Index:', level1Index)
+      console.log('level2Index:', level2Index)
+
+      let realLevel1 = level1
+      for (let i = 0; i < index; i++) {
+        realLevel1 += this.scrollData[level1].length
+      }
+      this.$router.push(
+        {
+          name: 'goodsListMenu',
+          params: {
+            level2Index: level2Index,
+            level2: level2,
+            level1Index: level1Index,
+            level1: realLevel1,
+            bodys: this.illness2,
+            model: 'illnessModel'
+          }
+        }
+      )
     },
-    showPicker (index) {
+    showPicker (index, classifyVal) {
+      this.classifyVal = classifyVal
+      this.classifyIndex = index
       this.bodysShow = this.bodys[index]
       if (!this.bodyPicker) {
-        console.log(this.bodysShow.arr)
         this.bodyPicker = this.$createPicker({
           title: this.bodysShow.name,
           data: [this.bodysShow.arr],
@@ -177,6 +209,19 @@ export default {
       this.bodyPicker.show()
     },
     selectHandle (selectedVal, selectedIndex, selectedText) {
+      this.$router.push(
+        {
+          name: 'goodsListMenu',
+          params: {
+            level2Index: selectedIndex[0],
+            level2: selectedVal[0],
+            level1Index: this.classifyIndex,
+            level1: this.classifyVal,
+            bodys: this.bodys,
+            model: 'bodyModel'
+          }
+        }
+      )
     },
     cancelHandle () {
     }
@@ -285,11 +330,19 @@ export default {
       color #2f2f2f
       background-color #f4f4f4
       overflow auto
-      .cube-tab
-        height 3.5rem
-        line-height 3.5rem
-      .cube-tab_active
-        border-bottom 0
+      .tab-wrapper
+        .tab-bar
+          display block
+          .tab-bar-item
+            width 100%
+            height 3.5rem
+            line-height 3.5rem
+            padding 0
+          .tab-bar_active
+            border-bottom 0
+            border-left 3px solid #ed4529
+            background-color #fff
+            color #ed4529
     .right-panel
       position absolute
       top 0
@@ -300,26 +353,29 @@ export default {
       padding 0 1rem 1rem
       overflow auto
       background-color #fff
-      ul
-        width 100%
+      .illness-wrapper
+        position relative
         height 100%
-        .apartment-detail
-          float left
-          .apartment-detail-title
-            width 100%
-            height 3rem
-            line-height 3rem
-            font-size 1.1rem
-            border-bottom 1px solid #e5e5e5
-          .apartment-detail-content
+        overflow hidden
+        ul
+          width 100%
+          .apartment-detail
             float left
-            padding-top 1rem
-            .illness-name
-              display block
+            .apartment-detail-title
+              width 100%
+              height 3rem
+              line-height 3rem
+              font-size 1.1rem
+              border-bottom 1px solid #e5e5e5
+            .apartment-detail-content
               float left
-              margin 0.5rem 0.2rem
-              border 1px solid #e5e5e5
-              border-radius 5rem
-              padding 0.3rem 0.8rem
-              color #717171
+              padding-top 1rem
+              .illness-name
+                display block
+                float left
+                margin 0.5rem 0.2rem
+                border 1px solid #e5e5e5
+                border-radius 5rem
+                padding 0.3rem 0.8rem
+                color #717171
 </style>

@@ -7,7 +7,8 @@
       "sellCount":40,
       "typeId":1,
       "description":"非处方药",
-      "classification":"神经痛"
+      "classification":"神经痛",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/907911/ba3127a5-1cce-4b47-96a1-03fc06cc94ff!400x400.jpg",
@@ -16,7 +17,8 @@
       "sellCount":50,
       "typeId":2,
       "description":"处方药",
-      "classification":"神经痛"
+      "classification":"神经痛",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/929834/210dca60-79cc-4bd2-99c6-1fddc341423c!200x200.jpg",
@@ -25,7 +27,8 @@
       "sellCount":60,
       "typeId":2,
       "description":"非处方药",
-      "classification":"神经痛"
+      "classification":"神经痛",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/M0322/cd2d0920-a368-492a-9cf4-54d76b5f70de!100x100.jpg",
@@ -34,7 +37,8 @@
       "sellCount":10,
       "typeId":2,
       "description":"处方药",
-      "classification":"神经痛"
+      "classification":"神经痛",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/902422/2ffae74f-e154-49f9-95ac-c0d74135bacb!200x200.jpg",
@@ -43,7 +47,8 @@
       "sellCount":9,
       "typeId":2,
       "description":"处方药",
-      "classification":"血压异常"
+      "classification":"血压异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/906508/6fcac8df-3e0c-4e7b-a61d-d176cdba6892!200x200.jpg",
@@ -52,7 +57,8 @@
       "sellCount":78,
       "typeId":2,
       "description":"非处方药",
-      "classification":"血压异常"
+      "classification":"血压异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/906593/20020bad-48d8-439b-a570-ab55300d5116!400x400.jpg",
@@ -61,7 +67,8 @@
       "sellCount":50,
       "typeId":2,
       "description":"处方药",
-      "classification":"血压异常"
+      "classification":"血压异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/905895/15a34d21-52eb-4609-afb5-415082c2912d!200x200.jpg",
@@ -70,7 +77,8 @@
       "sellCount":8,
       "typeId":2,
       "description":"非处方药",
-      "classification":"血压异常"
+      "classification":"血压异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/907425/0e6328d9-53d5-4a39-8e2d-a81dbe1fca72!200x200.jpg",
@@ -79,7 +87,8 @@
       "sellCount":7,
       "typeId":2,
       "description":"处方药",
-      "classification":"血压异常"
+      "classification":"血压异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/906053/e798e525-ad42-475c-a4f8-542929300b30!400x400.jpg",
@@ -88,7 +97,8 @@
       "sellCount":6,
       "typeId":2,
       "description":"非处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/904456/14dcff9d-2619-47fa-a1ab-bf2b85d9530f!200x200.jpg",
@@ -97,7 +107,8 @@
       "sellCount":46,
       "typeId":2,
       "description":"处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/907911/ba3127a5-1cce-4b47-96a1-03fc06cc94ff!400x400.jpg",
@@ -106,7 +117,8 @@
       "sellCount":99,
       "typeId":2,
       "description":"处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/929834/210dca60-79cc-4bd2-99c6-1fddc341423c!200x200.jpg",
@@ -115,7 +127,8 @@
       "sellCount":100,
       "typeId":2,
       "description":"处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"哮喘"
     },
     {
       "src":"http://image.360hwj.com/goods/M0322/cd2d0920-a368-492a-9cf4-54d76b5f70de!100x100.jpg",
@@ -124,7 +137,8 @@
       "sellCount":101,
       "typeId":2,
       "description":"处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"支气管炎"
     },
     {
       "src":"http://image.360hwj.com/goods/902422/2ffae74f-e154-49f9-95ac-c0d74135bacb!200x200.jpg",
@@ -133,7 +147,8 @@
       "sellCount":102,
       "typeId":4,
       "description":"处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"支气管炎"
     },
     {
       "src":"http://image.360hwj.com/goods/906508/6fcac8df-3e0c-4e7b-a61d-d176cdba6892!200x200.jpg",
@@ -142,7 +157,8 @@
       "sellCount":103,
       "typeId":2,
       "description":"非处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"支气管炎"
     },
     {
       "src":"http://image.360hwj.com/goods/906593/20020bad-48d8-439b-a570-ab55300d5116!400x400.jpg",
@@ -151,7 +167,8 @@
       "sellCount":104,
       "typeId":2,
       "description":"处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"支气管炎"
     },
     {
       "src":"http://image.360hwj.com/goods/905895/15a34d21-52eb-4609-afb5-415082c2912d!200x200.jpg",
@@ -160,7 +177,8 @@
       "sellCount":405,
       "typeId":2,
       "description":"处方药",
-      "classification":"血糖异常"
+      "classification":"血糖异常",
+      "classification1":"支气管炎"
     },
     {
       "src":"http://image.360hwj.com/goods/907425/0e6328d9-53d5-4a39-8e2d-a81dbe1fca72!200x200.jpg",
@@ -169,7 +187,8 @@
       "sellCount":65,
       "typeId":2,
       "description":"处方药",
-      "classification":"补益调节"
+      "classification":"补益调节",
+      "classification1":"支气管炎"
     },
     {
       "src":"http://image.360hwj.com/goods/906053/e798e525-ad42-475c-a4f8-542929300b30!400x400.jpg",
@@ -178,7 +197,8 @@
       "sellCount":50,
       "typeId":3,
       "description":"非处方药",
-      "classification":"补益调节"
+      "classification":"补益调节",
+      "classification1":"支气管炎"
     }
   ]
 }

@@ -4,11 +4,7 @@
         <i class="icon-msg vertical-center"></i>
         <i class="icon-set vertical-center"></i>
       </div>
-      <cube-scroll
-        ref="myselfScroll"
-        :options="options"
-        class="myself-scroll"
-      >
+      <div class="myself-wrapper" ref="myselfWrapper">
         <div class="myself-content">
           <!--顶部内容-->
           <div class="personal-top">
@@ -177,7 +173,7 @@
             </div>
           </div>
         </div>
-      </cube-scroll>
+      </div>
 
       <footer-nav></footer-nav>
     </div>
@@ -185,6 +181,7 @@
 
 <script>
 import FooterNav from '../footer-nav/footer-nav'
+import BScroll from 'better-scroll'
 export default {
   name: 'myself',
   components: { FooterNav },
@@ -197,14 +194,16 @@ export default {
   },
   created () {
   },
+  methods: {
+    _initScroll () {
+      this.myselfScroll = new BScroll(this.$refs['myselfWrapper'], {
+        click: true
+      })
+    }
+  },
   mounted () {
-    this.$nextTick(() => {
-      let current = this
-      setTimeout(function () {
-        /* 需要等数据渲染完再refresh，否则不能滚动 */
-        current.$refs.myselfScroll.refresh()
-      }, 1000)
-    })
+    console.log(this.$refs['myselfWrapper'])
+    this._initScroll()
   }
 }
 </script>
@@ -239,7 +238,7 @@ export default {
       height 1.5rem
       background url("./nav_set_white@2x.png") no-repeat center
       right 1rem
-  .myself-scroll
+  .myself-wrapper
     position relative
     height 100%
     .myself-content

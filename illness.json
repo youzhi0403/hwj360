@@ -2,7 +2,7 @@
   "data":[
     {
       "name":"内科",
-      "classification":[
+      "arr":[
         {
           "name":"呼吸内科",
           "arr":[
@@ -123,7 +123,7 @@
     },
     {
       "name":"外科",
-      "classification":[
+      "arr":[
         {
           "name":"普外科",
           "arr":[
@@ -163,35 +163,6 @@
             {
               "name":"尿路感染",
               "value":"尿路感染"
-            },
-            {
-              "name":"胆结石",
-              "value":"胆结石"
-            },
-            {
-              "name":"痔疮",
-              "value":"痔疮"
-            },
-            {
-              "name":"肛裂",
-              "value":"肛裂"
-            },
-            {
-              "name":"肛瘘",
-              "value":"肛瘘"
-            }
-          ]
-        },
-        {
-          "name":"普外科",
-          "arr":[
-            {
-              "name":"阑尾炎",
-              "value":"阑尾炎"
-            },
-            {
-              "name":"胆囊炎",
-              "value":"胆囊炎"
             },
             {
               "name":"胆结石",
