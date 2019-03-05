@@ -3,6 +3,7 @@ import './cube-ui'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import './register'
+import store from './store'
 
 import home from './components/home/home'
 import classify from './components/classify/classify'
@@ -56,5 +57,6 @@ const router = new VueRouter({
 
 new Vue({
   render: h => h(App),
+  store,
   router
 }).$mount('#app')

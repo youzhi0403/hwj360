@@ -2,7 +2,6 @@
   <div class="shopcartPopup">
     <cube-popup
       :position="position"
-      :mask-closable="true"
       v-model="isShow"
       @mask-click="close"
     >
@@ -39,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div class="shopCartPopup-addCart">
+        <div class="shopCartPopup-addCart" @click.stop.prevent="addToCart">
           {{buttonText}}
         </div>
 
@@ -49,6 +48,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'shopcartPopup',
   data () {
@@ -78,6 +78,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      ''
+    ]),
     close (e) {
       this.$emit('close', e)
     },
@@ -88,6 +91,9 @@ export default {
       if (this.number > 1) {
         this.number--
       }
+    },
+    addToCart () {
+
     }
   }
 }

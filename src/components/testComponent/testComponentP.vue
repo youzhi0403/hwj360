@@ -1,29 +1,37 @@
 <template>
   <div class="testComponentP">
-    <test-component :param3="p"></test-component>
+    <ul>
+      <li
+        v-for="(item,index) in goods"
+        :key="index">
+        {{item.name}}
+      </li>
+    </ul>
+
   </div>
 </template>
 
 <script>
-import TestComponent from './testComponent'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'testComponentP',
-  components: { TestComponent },
-  data () {
-    return {
-      p: 0
-    }
+  methods: {
+    ...mapActions([
+      'setGoods'
+    ])
   },
   created () {
-    console.log('parent created...')
-    /* var current = this
-    setTimeout(function () {
-      current.p = 888
-    }, 1000) */
+    this.setGoods()
   },
-  mounted () {
-    console.log('parent mounted...')
-    this.p = 123
+  data () {
+    return {
+
+    }
+  },
+  computed: {
+    ...mapState([
+      'goods'
+    ])
   }
 }
 </script>

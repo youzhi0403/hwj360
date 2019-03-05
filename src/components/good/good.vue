@@ -195,7 +195,7 @@
     <div class="footer">
       <div class="footer_left">
         <ul class="footer_left_elms after">
-          <li class="footer_left_elm">
+          <li class="footer_left_elm" @click="locateToHome">
             <a class="footer_left_img horizontal_center">
               <p class="icon-hwj-home icon-hwj"></p>
             </a>
@@ -209,7 +209,7 @@
             <p class="footer-text">客服</p>
           </li>
 
-          <li class="footer_left_elm">
+          <li class="footer_left_elm" @click.stop.prevent="locateToShopcart">
             <a class="footer_left_img horizontal_center">
               <p class="icon-hwj-shopcart icon-hwj"></p>
             </a>
@@ -219,20 +219,22 @@
         </ul>
       </div>
       <div class="footer_right">
-        <a class="footer_right_elm footer_right_join">加入购物车</a>
+        <a class="footer_right_elm footer_right_join" @click.stop.prevent="popupShow">加入购物车</a>
         <a class="footer_right_elm footer_right_buy">立即购买</a>
       </div>
     </div>
     <search-com></search-com>
+    <shopcart-popup v-show="paramOfPopupShow" v-on:close="close"></shopcart-popup>
   </div>
 </template>
 
 <script>
 import { getFoodD } from '../../api'
 import SearchCom from '../searchCom/searchCom'
+import ShopcartPopup from '../shopcartPopup/shopcartPopup'
 export default {
   name: 'good',
-  components: { SearchCom },
+  components: { ShopcartPopup, SearchCom },
   data () {
     return {
       adverseReaction: '',
@@ -255,12 +257,12 @@ export default {
       standard: '',
       taboo: '',
       type: '',
-      warnImg: ''
+      warnImg: '',
+      paramOfPopupShow: false
     }
   },
   created () {
     this.init()
-    console.log('goodId:', this.$route.params.goodId)
   },
   methods: {
     init () {
@@ -293,6 +295,18 @@ export default {
         this.warnImg = res.data.warnImg
         console.log(this.imgs)
       })
+    },
+    popupShow () {
+      this.paramOfPopupShow = !this.paramOfPopupShow
+    },
+    close (e) {
+      this.paramOfPopupShow = !this.paramOfPopupShow
+    },
+    locateToShopcart () {
+      this.$router.push({ name: 'shopcart' })
+    },
+    locateToHome () {
+      this.$router.push({ name: 'home' })
     }
   }
 }
@@ -526,7 +540,7 @@ export default {
     display flex
     justify-content space-around
     align-items center
-    z-index 9999
+    z-index 50
     background-color #fff
     height 4rem
     .footer_left
