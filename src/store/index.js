@@ -8,7 +8,8 @@ Vue.use(Vuex)
 
 const state = {
   goods: [], // 商品列表
-  cartList: [] // 加入购物车的商品列表
+  cartList: [], // 加入购物车的商品列表
+  testArr: []
 }
 
 export default new Vuex.Store({

@@ -48,7 +48,6 @@ export default {
   },
   methods: {
     selectGood () {
-      console.log('进来selectGood...')
       this.$router.push({ name: 'good', params: { goodId: this.goodId } })
     }
   }

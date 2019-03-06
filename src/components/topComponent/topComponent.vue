@@ -22,7 +22,6 @@ export default {
   methods: {
     changeState (state) {
       this.change = state
-      console.log('状态改变了:', this.change)
     }
   }
 }

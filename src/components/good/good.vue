@@ -293,7 +293,6 @@ export default {
         this.taboo = res.data.taboo
         this.type = res.data.type
         this.warnImg = res.data.warnImg
-        console.log(this.imgs)
       })
     },
     popupShow () {

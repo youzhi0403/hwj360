@@ -1,5 +1,9 @@
-export const ADD_CART = 'ADD_CART'
-export const REMOVE_CART = 'REMOVE_CART'
-export const INCREMENT_QUANTITY = 'INCREMENT_QUANTITY'
-export const DESCREASE_QUANTITY = 'DESCREASE_QUANTITY'
-export const SET_GOODS = 'SET_GOODS'
+export const ADD_CART = 'ADD_CART' // 添加商品到购物车
+export const REMOVE_CART = 'REMOVE_CART' // 移除购物车的商品
+export const INCREMENT_QUANTITY = 'INCREMENT_QUANTITY' // 增加购物车的商品数量
+export const DESCREASE_QUANTITY = 'DESCREASE_QUANTITY' // 减少购物车的商品数量
+export const SET_GOODS = 'SET_GOODS' // 获取商品列表
+export const ACTIVE_GOOD = 'ACTIVE_GOOD' // 选中指定商品
+export const CANCLE_GOOD = 'CANCLE_GOOD' // 取消选中的商品
+export const ACTIVE_ALL = 'ACTIVE_ALL' // 选中所有商品
+export const CANCLE_ALL = 'CANCLE_ALL' // 取消选中所有的商品

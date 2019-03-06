@@ -365,7 +365,7 @@ export default {
       this.$router.push({ name: 'share' })
     },
     test () {
-      console.log('test...')
+
     },
     locateToSignin () {
       this.$router.push({ name: 'signin' })

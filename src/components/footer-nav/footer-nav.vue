@@ -35,19 +35,15 @@ export default {
   name: 'footer-nav',
   methods: {
     locateHome () {
-      console.log('home..')
       this.$router.push({ name: 'home' })
     },
     locateClassify () {
-      console.log('classify..')
       this.$router.push({ name: 'classify' })
     },
     locateShopCart () {
-      console.log('shopcart..')
       this.$router.push({ name: 'shopcart' })
     },
     locateMySelf () {
-      console.log('myself..')
       this.$router.push({ name: 'myself' })
     }
   }

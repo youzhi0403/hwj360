@@ -48,7 +48,8 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
+import store from '../../store'
 export default {
   name: 'shopcartPopup',
   data () {
@@ -58,6 +59,9 @@ export default {
       number: 1
     }
   },
+  computed: mapState([
+    'cartList'
+  ]),
   props: {
     good: {
       type: Object,
@@ -78,9 +82,6 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      ''
-    ]),
     close (e) {
       this.$emit('close', e)
     },
@@ -93,8 +94,12 @@ export default {
       }
     },
     addToCart () {
-
-    }
+      store.dispatch('addCart', { good: this.good, quantity: this.number })
+      this.$emit('close')
+    },
+    ...mapMutations([
+      'ADD_CART'
+    ])
   }
 }
 </script>

@@ -3,22 +3,22 @@
       <h1 class="shopcart-title">购物车</h1>
 
       <!--全选底部导航条-->
-      <div class="fixed-ele" v-show="isEmpty">
+      <div class="fixed-ele" v-show="!isEmpty">
         <div class="select-menu">
-          <div class="select-menu-all">
-            <i class="icon-select vertical-center"></i>
+          <div class="select-menu-all" @click.stop.prevent="activeAll">
+            <i class="icon-select vertical-center" :class="{'active':isSelectAll}"></i>
             <p class="cart-selected">全选<span class="select-num"></span></p>
           </div>
           <div class="submit-btn-cart">
             删除
           </div>
           <div class="select-menu-price">
-            ￥0.00
+            ￥{{totalPrice}}
           </div>
         </div>
       </div>
       <!--商品为空时内容-->
-      <div class="shopcart-empty-container" v-show="!isEmpty">
+      <div class="shopcart-empty-container" v-show="isEmpty">
         <div class="empty-scroll" ref="emptyScroll">
           <div class="shopcart-empty-wrapper">
             <div class="shopcart-empty-box">
@@ -49,20 +49,20 @@
         </div>
       </div>
       <!--商品不为空时内容-->
-      <div class="shopcart-non-empty-container" v-show="isEmpty">
+      <div class="shopcart-non-empty-container" v-show="!isEmpty">
         <div class="non-empty-scroll" ref="nonEmptyScroll">
           <div class="non-empty-wrapper">
             <div class="non-empty-title">
-              <i class="icon-select vertical-center"></i>
+              <i class="icon-select vertical-center" @click.stop.prevent="activeAll" :class="{'active':isSelectAll}"></i>
               <h1>好万家健康商城</h1>
               <i class="icon-right vertical-center"></i>
             </div>
             <ul class="cart-products">
-              <li class="cart-product" v-for="(item,index) in cartItems" :key="index">
-                <i class="icon-select"></i>
+              <li class="cart-product" v-for="(item,index) in cartList" :key="index">
+                <i class="icon-select vertical-center" @click.stop.prevent="activeOne(item)" :class="{'active':item.active}"></i>
                 <div class="cart-product-detail">
                   <div class="cart-product-img vertical-center">
-                    <img src="item.src"/>
+                    <img :src="item.img"/>
                   </div>
                   <div class="cart-product-text">
                     <div>
@@ -86,27 +86,29 @@
 import { getGoodsList } from '../../api'
 import FooterNav from '../footer-nav/footer-nav'
 import BScroll from 'better-scroll'
+import { mapState, mapMutations, mapGetters } from 'vuex'
 export default {
   name: 'shopcart',
   components: {
     FooterNav
   },
-  props: {
-    cartItems: {
-      type: Array,
-      default: function () {
-        return []
-      }
-    }
-  },
   data () {
     return {
       isEmpty: true, // 判断购物车是否为空
-      recommendItems: [] // 推荐商品
+      recommendItems: [], // 推荐商品
+      isSelectAll: false // 是否全选
     }
   },
+  computed: {
+    ...mapState([
+      'cartList'
+    ]),
+    ...mapGetters([
+      'totalPrice'
+    ])
+  },
   created () {
-    this.isEmpty = (this.cartItems.length === 0)
+    this.isEmpty = (this.cartList.length === 0)
     getGoodsList().then(res => {
       this.recommendItems = res.data
 
@@ -120,9 +122,30 @@ export default {
       this.emptyScroll = new BScroll(this.$refs['emptyScroll'], {
         click: true
       })
+    },
+    ...mapMutations([
+      'ACTIVE_GOOD',
+      'CANCLE_GOOD',
+      'ACTIVE_ALL',
+      'CANCLE_ALL'
+    ]),
+    activeAll () {
+      this.isSelectAll = !this.isSelectAll
+      if (this.isSelectAll) {
+        this.ACTIVE_ALL()
+      } else {
+        this.CANCLE_ALL()
+      }
+    },
+    activeOne (item) {
+      if (item.active) {
+        this.CANCLE_GOOD(item)
+      } else {
+        this.ACTIVE_GOOD(item)
+      }
+      console.log('item.active:', item.active)
+      console.log(this.cartList[0].active)
     }
-  },
-  mounted () {
   }
 }
 </script>
@@ -262,9 +285,13 @@ export default {
           height 1.5rem
           background url("./icon-select-false.png") center no-repeat
           background-size contain
+          &.active
+            width 1.5rem
+            height 1.5rem
+            background url("./icon-select-true.png") center no-repeat
+            background-size contain
         .cart-selected
           margin-left 2rem
-
       .submit-btn-cart
         float right
         background-color #A5A5A5
@@ -299,6 +326,11 @@ export default {
             height 1.5rem
             background url("./icon-select-false.png") center no-repeat
             background-size contain
+            &.active
+              width 1.5rem
+              height 1.5rem
+              background url("./icon-select-true.png") center no-repeat
+              background-size contain
           h1
             height 3rem
             line-height 3rem
@@ -312,4 +344,57 @@ export default {
             height 1.2rem
             background url("./order-right.png") center no-repeat
             background-size contain
+        .cart-products
+          width 100%
+          height 100%
+          margin-bottom 3.5rem
+          .cart-product
+            width 100%
+            height 8rem
+            position relative
+            .icon-select
+              width 1.5rem
+              height 1.5rem
+              background url("./icon-select-false.png") center no-repeat
+              background-size contain
+              &.active
+                width 1.5rem
+                height 1.5rem
+                background url("./icon-select-true.png") center no-repeat
+                background-size contain
+            .cart-product-detail
+              margin-left 1.5rem
+              height 100%
+              position relative
+              .cart-product-img
+                width 6rem
+                height 6rem
+                left 0.5rem
+                img
+                  width 100%
+                  vertical-align middle
+              .cart-product-text
+                margin-left 7rem
+                height 100%
+                padding 1.5rem 1.5rem 1.5rem 0
+                div
+                  .cart-product-name
+                    width 80%
+                    display inline-block
+                    font-size 1rem
+                    white-space nowrap
+                    overflow hidden
+                    text-overflow ellipsis
+                  .cart-product-quantity
+                    float right
+                .cart-product-size
+                  width 100%
+                  height 2rem
+                  line-height 2rem
+                  font-size 1rem
+                .cart-product-price
+                  color #ed4529
+                  font-size 1rem
+                  position absolute
+                  bottom 1.5rem
 </style>

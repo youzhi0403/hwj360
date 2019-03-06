@@ -4,12 +4,15 @@ import {
 } from './mutation-types'
 
 export default {
-  addCart ({ state, commit }, { product, quantity }) {
-    const cartItem = state.items.find(item => item.name === product.name)
+  addCart ({ state, commit }, { good, quantity }) {
+    const cartItem = state.cartList.find(item => item.name === good.name)
     if (!cartItem) {
-      commit(ADD_CART, product)
+      commit(ADD_CART, { good, quantity })
     } else {
-      commit(INCREMENT_QUANTITY, product.name)
+      commit(INCREMENT_QUANTITY, {
+        name: good.name,
+        quantity
+      })
     }
   },
   descreaseCart ({ state, commit }, product) {
