@@ -5,12 +5,12 @@ import {
 
 export default {
   addCart ({ state, commit }, { good, quantity }) {
-    const cartItem = state.cartList.find(item => item.name === good.name)
+    const cartItem = state.cartList.find(item => item.id === good.id)
     if (!cartItem) {
       commit(ADD_CART, { good, quantity })
     } else {
       commit(INCREMENT_QUANTITY, {
-        name: good.name,
+        id: good.id,
         quantity
       })
     }

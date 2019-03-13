@@ -10,48 +10,33 @@
           完成
         </div>
       </div>
-      <div class="goodsFilter-content">
+      <div class="goodsFilter-scroll" ref="goodsFilterScroll">
+        <div class="goodsFilter-content">
 
-        <div class="filter-content">
-          <div class="filter-title" @click.stop.prevent="changeBrand">
-            品牌
-            <i class="toggle vertical_center icon-top-2"></i>
-          </div>
-          <div class="filter-container" v-show="brandIsShow">
-            <div class="filter-elm brand" v-for="(item,index) in type" :key="index">
-              <input type="checkbox" :value="item.id" v-model="selectedType">
-              {{item.name}}
+          <div class="filter-content">
+            <div class="filter-title" @click.stop.prevent="changeBrand">
+              品牌
+              <i class="toggle vertical_center icon-top-2"></i>
+            </div>
+            <div class="filter-container" v-show="brandIsShow">
+              <div class="filter-elm brand" v-for="(item,index) in brand" :key="index">
+                <input type="checkbox" :value="item.id" v-model="selectedBrand">
+                {{item.name}}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="filter-content">
-          <div class="filter-title" @click.stop.prevent="changeType">
-            类型
-            <i class="toggle vertical_center icon-top-2"></i>
-          </div>
-          <div class="filter-container" v-show="typeIsShow">
-            <div class="filter-elm">
-              <input type="radio" value="处方药" v-model="picked">
-              处方药
+          <div class="filter-content">
+            <div class="filter-title" @click.stop.prevent="changePrice">
+              价格区间
+              <i class="toggle vertical_center icon-top-2"></i>
             </div>
-            <div class="filter-elm">
-              <input type="radio" value="非处方药" v-model="picked">
-              非处方药
-            </div>
-          </div>
-        </div>
-
-        <div class="filter-content">
-          <div class="filter-title" @click.stop.prevent="changePrice">
-            价格区间
-            <i class="toggle vertical_center icon-top-2"></i>
-          </div>
-          <div class="filter-container" v-show="priceIsShow">
-            <div class="filter-price">
-              <input type="tel" placeholder="最低价" v-model="minPrice">
-              <span>--</span>
-              <input type="tel" placeholder="最高价" v-model="maxPrice">
+            <div class="filter-container" v-show="priceIsShow">
+              <div class="filter-price">
+                <input type="tel" placeholder="最低价" v-model="minPrice">
+                <span>--</span>
+                <input type="tel" placeholder="最高价" v-model="maxPrice">
+              </div>
             </div>
           </div>
         </div>
@@ -60,55 +45,76 @@
 </template>
 
 <script>
-import { getType } from '../../api'
+import BScroll from 'better-scroll'
+import res from './brand'
 
 export default {
   name: 'goodsFilter',
   data () {
     return {
-      goods: {},
-      count: 0,
-      type: [],
+      brand: [],
       brandIsShow: false,
-      typeIsShow: false,
       priceIsShow: false,
-      selectedType: [],
-      picked: '',
+      selectedBrand: [],
       minPrice: 0,
       maxPrice: 0
     }
   },
+  props: {
+    propOfMinPrice: {
+      type: Number,
+      default: function () {
+        return 0
+      }
+    },
+    propOfMaxPrice: {
+      type: Number,
+      default: function () {
+        return 0
+      }
+    },
+    propOfSelectedBrand: {
+      type: Array,
+      default: function () {
+        return []
+      }
+    }
+  },
   created () {
     this.init()
+    this.minPrice = this.propOfMinPrice
+    this.maxPrice = this.propOfMaxPrice
+    this.selectedBrand = this.propOfSelectedBrand
+  },
+  mounted () {
+    this._initScroll()
   },
   methods: {
     init () {
-      getType().then((res) => {
-        this.type = res.data.type
-        this.count = res.data.count
-      })
+      this.brand = res.data
     },
     changeBrand () {
       this.brandIsShow = !this.brandIsShow
-    },
-    changeType () {
-      this.typeIsShow = !this.typeIsShow
+      this.$nextTick(() => {
+        this.contentScroll.refresh()
+      })
     },
     changePrice () {
       this.priceIsShow = !this.priceIsShow
+      this.$nextTick(() => {
+        this.contentScroll.refresh()
+      })
     },
     finish (event) {
       /* if (!event._constructed) {
         return
       } */
-      this.$emit('finish', this.selectedType, this.picked, this.minPrice, this.maxPrice)
-    }
-  },
-  watch: {
-    'picked': function (val) {
-      console.log(val)
+      this.$emit('finish', this.selectedBrand, this.minPrice, this.maxPrice)
     },
-    'selectedType': function (old, val) {
+    _initScroll () {
+      this.contentScroll = new BScroll(this.$refs['goodsFilterScroll'], {
+        click: true
+      })
     }
   }
 }

@@ -13,13 +13,13 @@
       </span>
     </div>
 
-    <div class="gooey-menu-item gooey-menu-item-first" :class="{'active-first':extend}">
+    <div class="gooey-menu-item gooey-menu-item-first" :class="{'active-first':extend}" @click.stop.prevent="locateToHome">
       <img src="./home.png" class="gooey-menu-item-icon">
     </div>
-    <div class="gooey-menu-item gooey-menu-item-second" :class="{'active-second':extend}">
+    <div class="gooey-menu-item gooey-menu-item-second" :class="{'active-second':extend}" @click.stop.prevent="locateToSearch">
       <img src="./search.png" class="gooey-menu-item-icon">
     </div>
-    <div class="gooey-menu-item gooey-menu-item-third" :class="{'active-third':extend}">
+    <div class="gooey-menu-item gooey-menu-item-third" :class="{'active-third':extend}" @click.stop.prevent="locateToService">
       <img src="./service.png" class="gooey-menu-item-icon">
     </div>
 
@@ -37,6 +37,15 @@ export default {
   methods: {
     change () {
       this.extend = !this.extend
+    },
+    locateToHome () {
+      this.$router.push({ name: 'home' })
+    },
+    locateToSearch () {
+      this.$router.push({ name: 'search' })
+    },
+    locateToService () {
+      this.$router.push({ name: 'service' })
     }
   }
 }

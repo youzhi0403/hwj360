@@ -1,29 +1,25 @@
 <template>
-  <div class="footer">
-    <div class="footer_item" @click.stop.prevent="locateHome">
-      <i class="horizontal_center iconfont" ref="nav_icon_home">
-        <img src="../../common/imgTemp/home/home.png">
+  <div class="footer-nav">
+    <div class="footer_item" @click.stop.prevent="locateHome" :class="{active:(routerName === 'home')}">
+      <i class="horizontal_center iconfont home-nav" ref="nav_icon_home">
       </i>
       <p class="horizontal_center icon_text">首页</p>
     </div>
 
-    <div class="footer_item" @click.stop.prevent="locateClassify">
-      <i class="horizontal_center iconfont" ref="nav_icon_classify">
-        <img src="../../common/imgTemp/home/classify.png">
+    <div class="footer_item" @click.stop.prevent="locateClassify" :class="{active:(routerName === 'classify')}">
+      <i class="horizontal_center iconfont classify-nav" ref="nav_icon_classify">
       </i>
       <p class="horizontal_center icon_text">分类</p>
     </div>
 
-    <div class="footer_item" @click.stop.prevent="locateShopCart">
-      <i class="horizontal_center iconfont" ref="nav_icon_shopcart">
-        <img src="../../common/imgTemp/home/shopcart.png">
+    <div class="footer_item" @click.stop.prevent="locateShopCart" :class="{active:(routerName === 'shopcart')}">
+      <i class="horizontal_center iconfont shopcart-nav" ref="nav_icon_shopcart">
       </i>
       <p class="horizontal_center icon_text">购物车</p>
     </div>
 
-    <div class="footer_item" @click.stop.prevent="locateMySelf">
-      <i class="horizontal_center iconfont" ref="nav_icon_myself">
-        <img src="../../common/imgTemp/home/myself.png">
+    <div class="footer_item" @click.stop.prevent="locateMySelf" :class="{active:(routerName === 'myself')}">
+      <i class="horizontal_center iconfont myself-nav" ref="nav_icon_myself">
       </i>
       <p class="horizontal_center icon_text">个人</p>
     </div>
@@ -33,17 +29,37 @@
 <script>
 export default {
   name: 'footer-nav',
+  props: {
+    propOfRouterName: {
+      type: String,
+      default: function () {
+        return 'home'
+      }
+    }
+  },
+  data () {
+    return {
+      routerName: ''
+    }
+  },
+  created () {
+    this.routerName = this.propOfRouterName
+  },
   methods: {
     locateHome () {
+      this.routerName = 'home'
       this.$router.push({ name: 'home' })
     },
     locateClassify () {
+      this.routerName = 'classify'
       this.$router.push({ name: 'classify' })
     },
     locateShopCart () {
+      this.routerName = 'shopcart'
       this.$router.push({ name: 'shopcart' })
     },
     locateMySelf () {
+      this.routerName = 'myself'
       this.$router.push({ name: 'myself' })
     }
   }
@@ -51,7 +67,7 @@ export default {
 </script>
 
 <style lang="stylus">
-  .footer
+  .footer-nav
     position fixed
     bottom 0
     max-width 640px
@@ -72,7 +88,37 @@ export default {
         height 1.5rem
         display block
         top 0.5rem
+      .home-nav
+        background url("./home.png") center no-repeat
+        background-size contain
+      .classify-nav
+        background url("./classify.png") center no-repeat
+        background-size contain
+      .shopcart-nav
+        background url("./shopcart.png") center no-repeat
+        background-size contain
+      .myself-nav
+        background url("./myself.png") center no-repeat
+        background-size contain
       .icon_text
         bottom 0.2rem
         font-size 0.8rem
+      &.active
+        .home-nav
+          background url("./home_active.png") center no-repeat
+          background-size contain
+        .classify-nav
+          background url("./classify_active.png") center no-repeat
+          background-size contain
+        .shopcart-nav
+          background url("./shopcart_active.png") center no-repeat
+          background-size contain
+        .myself-nav
+          background url("./myself_active.png") center no-repeat
+          background-size contain
+        .icon_text
+          bottom 0.2rem
+          font-size 0.8rem
+          color #D93C27
+
 </style>
