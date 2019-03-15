@@ -275,22 +275,22 @@ export default {
         {
           img: 'http://m.360hwj.com/images/0130/6.png',
           text: '男性专区',
-          clickEventName: this.test
+          clickEventName: this.unDevelopment
         },
         {
           img: 'http://m.360hwj.com/images/0130/7.png',
           text: '女性专区',
-          clickEventName: this.test
+          clickEventName: this.unDevelopment
         },
         {
           img: 'http://m.360hwj.com/images/0130/8.png',
           text: '中药饮片',
-          clickEventName: this.test
+          clickEventName: this.unDevelopment
         },
         {
           img: 'http://m.360hwj.com/images/0130/9.png',
           text: '成人用品',
-          clickEventName: this.test
+          clickEventName: this.unDevelopment
         },
         {
           img: 'http://m.360hwj.com/images/0130/10.png',
@@ -384,6 +384,9 @@ export default {
     },
     locateToExchange () {
       this.$router.push({ name: 'exchange' })
+    },
+    unDevelopment () {
+      alert('待开发...')
     }
 
   }

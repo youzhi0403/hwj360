@@ -1,5 +1,5 @@
 1.selfHelp组件里，点击弹层后，cube-scroll会卡住不动。
 待试的方案：
-将cube-scroll换成better-scroll
+将cube-scroll换成better-scroll（已解决）
 
-2.myself组件里，使用了setTimeout来延迟better-scroll的refresh，终究不是好方案
+2.myself组件里，使用了setTimeout来延迟better-scroll的refresh，终究不是好方案（已解决）
