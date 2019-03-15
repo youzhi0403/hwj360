@@ -5,7 +5,7 @@
         <i class="vertical-center icon-search"></i>
         <input name="keyword" class="search-input" placeholder="请输入搜索药品" v-model="keyword" @keyup.enter="locateToGoodList"/>
       </div>
-      <div class="topComponent-news">
+      <div class="topComponent-news" @click.stop.prevent="locateToNews">
         <div class="icon-msg horizontal-center"></div>
         <div class="news-text">消息</div>
       </div>
@@ -41,6 +41,9 @@ export default {
     },
     locateToGoodDetail (item) {
       this.$router.push({ name: 'goodDetail', params: { good: item } })
+    },
+    locateToNews () {
+      this.$router.push({ name: 'news' })
     }
   },
   created () {

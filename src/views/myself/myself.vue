@@ -1,8 +1,8 @@
 <template>
   <div class="myself">
     <div class="myself-header">
-      <i class="icon-msg vertical-center"></i>
-      <i class="icon-set vertical-center"></i>
+      <i class="icon-msg vertical-center" @click.stop.prevent="locateToNews"></i>
+      <i class="icon-set vertical-center" @click.stop.prevent="locateToSetting"></i>
     </div>
     <div class="myself-wrapper" ref="myselfWrapper">
       <div class="myself-content">
@@ -12,17 +12,17 @@
             <img src="http://m.360hwj.com/images/personal/personal-topbg.png">
           </div>
           <div class="personal-show">
-            <div class="personal-head-img">
+            <div class="personal-head-img" @click.stop.prevent="locateToUserEdit">
               <img :src="avatar">
             </div>
             <p class="personal-name">{{username}}</p>
           </div>
           <div class="person-top-list horizontal-center">
-            <div class="personal-top-elm">
+            <div class="personal-top-elm" @click.stop.prevent="locateToAssets">
               <p class="personal-elm-num">￥{{assets}}</p>
               <p class="personal-elm-name">钱包</p>
             </div>
-            <div class="personal-top-elm">
+            <div class="personal-top-elm" @click.stop.prevent="locateToIntegralsDetail">
               <p class="personal-elm-num">{{integrals}}</p>
               <p class="personal-elm-name">积分</p>
             </div>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <!--订单-->
-        <div class="personal-order-content">
+        <div class="personal-order-content" @click.stop.prevent="locateToOrder">
           <div class="order-type-item">
             <div class="order-type-item-icon horizontal-center">
               <img src="http://m.360hwj.com/images/personal/order_all@2x.png">
@@ -70,7 +70,7 @@
           </div>
         </div>
         <!--推荐分享-->
-        <div class="personal-share">
+        <div class="personal-share" @click.stop.prevent="locateToShare">
           <div class="share-img vertical-center">
             <img src="http://m.360hwj.com/images/personal/my_share@2x.png">
           </div>
@@ -85,7 +85,7 @@
           </div>
         </div>
         <div class="personal-widget-content">
-          <div class="widget-item">
+          <div class="widget-item" @click.stop.prevent="locateToCollect">
             <div class="widget-img vertical-center">
               <img src="http://m.360hwj.com/images/personal/my_collect@2x.png">
             </div>
@@ -97,7 +97,7 @@
             </div>
           </div>
 
-          <div class="widget-item">
+          <div class="widget-item" @click.stop.prevent="locateToDiscount">
             <div class="widget-img vertical-center">
               <img src="http://m.360hwj.com/images/personal/my_coupon@2x.png">
             </div>
@@ -109,7 +109,7 @@
             </div>
           </div>
 
-          <div class="widget-item">
+          <div class="widget-item" @click="locateToFootprint">
             <div class="widget-img vertical-center">
               <img src="http://m.360hwj.com/images/personal/my_footmark@2x.png">
             </div>
@@ -121,7 +121,7 @@
             </div>
           </div>
 
-          <div class="widget-item">
+          <div class="widget-item" @click.stop.prevent="locateToMyCase">
             <div class="widget-img vertical-center">
               <img src="http://m.360hwj.com/images/personal/my_case@2x.png">
             </div>
@@ -133,7 +133,7 @@
             </div>
           </div>
 
-          <div class="widget-item">
+          <div class="widget-item" @click.stop.prevent="locateToAddress">
             <div class="widget-img vertical-center">
               <img src="http://m.360hwj.com/images/personal/my_address@3x.png">
             </div>
@@ -145,7 +145,7 @@
             </div>
           </div>
 
-          <div class="widget-item">
+          <div class="widget-item" @click.stop.prevent="locateToService">
             <div class="widget-img vertical-center">
               <img src="http://m.360hwj.com/images/personal/my_service-@2x.png">
             </div>
@@ -160,7 +160,7 @@
             </div>
           </div>
 
-          <div class="widget-item">
+          <div class="widget-item" @click.stop.prevent="locateToSetting">
             <div class="widget-img vertical-center">
               <img src="http://m.360hwj.com/images/personal/my_set@2x.png">
             </div>
@@ -209,6 +209,45 @@ export default {
       this.myselfScroll = new BScroll(this.$refs['myselfWrapper'], {
         click: true
       })
+    },
+    locateToNews () {
+      this.$router.push({ name: 'news' })
+    },
+    locateToSetting () {
+      this.$router.push({ name: 'setting' })
+    },
+    locateToUserEdit () {
+      this.$router.push({ name: 'userEdit' })
+    },
+    locateToAssets () {
+      this.$router.push({ name: 'assets' })
+    },
+    locateToIntegralsDetail () {
+      this.$router.push({ name: 'integralsDetail' })
+    },
+    locateToShare () {
+      this.$router.push({ name: 'share' })
+    },
+    locateToOrder () {
+      this.$router.push({ name: 'order' })
+    },
+    locateToCollect () {
+      this.$router.push({ name: 'collect' })
+    },
+    locateToMyCase () {
+      this.$router.push({ name: 'myCase' })
+    },
+    locateToDiscount () {
+      this.$router.push({ name: 'discount' })
+    },
+    locateToAddress () {
+      this.$router.push({ name: 'userAddress' })
+    },
+    locateToFootprint () {
+      this.$router.push({ name: 'footprint' })
+    },
+    locateToService () {
+      this.$router.push({ name: 'service' })
     }
   },
   mounted () {
@@ -247,6 +286,7 @@ export default {
         width 2rem
         height 1.5rem
         background url("./nav_set_white@2x.png") no-repeat center
+        background-size contain
         right 1rem
     .myself-wrapper
       position relative

@@ -22,6 +22,16 @@ import signIn from '../views/sign-in/sign-in'
 import exchange from '../views/exchange/exchange'
 import goodDetailIntegrals from '../views/goodDetail-integrals/goodDetail-integrals'
 import addressSelect from '../components/addressSelect/addressSelect'
+import news from '../views/news/news'
+import setting from '../views/setting/setting'
+import userEdit from '../views/userEdit/userEdit'
+import integralsDetail from '../views/integralsDetail/integralsDetail'
+import order from '../views/order/order.vue'
+import collect from '../views/collect/collect'
+import discount from '../views/discount/discount'
+import footprint from '../views/footprint/footprint'
+import myCase from '../views/myCase/myCase'
+import orderDetail from '../views/orderDetail/orderDetail'
 
 const routes = [
   { path: '/', redirect: 'home' },
@@ -46,7 +56,17 @@ const routes = [
   { name: 'signIn', path: '/signIn', component: signIn },
   { name: 'exchange', path: '/exchange', component: exchange },
   { name: 'goodDetailIntegrals', path: '/goodDetailIntegrals', component: goodDetailIntegrals, props: true },
-  { name: 'addressSelect', path: '/addressSelect', component: addressSelect }
+  { name: 'addressSelect', path: '/addressSelect', component: addressSelect },
+  { name: 'news', path: '/news', component: news },
+  { name: 'setting', path: '/setting', component: setting },
+  { name: 'userEdit', path: '/userEdit', component: userEdit },
+  { name: 'integralsDetail', path: '/integralsDetail', component: integralsDetail },
+  { name: 'order', path: '/order', component: order },
+  { name: 'collect', path: '/collect', component: collect },
+  { name: 'discount', path: '/discount', component: discount },
+  { name: 'footprint', path: '/footprint', component: footprint },
+  { name: 'myCase', path: '/myCase', component: myCase },
+  { name: 'orderDetail', path: '/orderDetail', component: orderDetail, props: true }
 
 ]
 Vue.use(VueRouter)

@@ -29,7 +29,10 @@ const state = {
   avatar: 'http://static.360hwj.com/group1/M00/07/A1/J2zAA1mZH6-AQ-G_AAAEadr9AHg271.png',
   integrals: 65, // 积分
   signDays: 2, // 连续签到的天数
-  isSign: false // 今日是否签到
+  isSign: false, // 今日是否签到
+  nickname: 'youzhi', // 昵称
+  birthday: '', // 生日
+  sex: '男'
 }
 
 export default new Vuex.Store({
