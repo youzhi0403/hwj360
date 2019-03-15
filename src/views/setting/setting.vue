@@ -31,13 +31,18 @@
       <i class="icon-right vertical-center"></i>
     </div>
 
-    <button class="fixed-btn">切换账号</button>
+    <button class="fixed-btn" @click="locateToLogin">切换账号</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'setting'
+  name: 'setting',
+  methods: {
+    locateToLogin () {
+      this.$router.push({ name: 'login' })
+    }
+  }
 }
 </script>
 

@@ -32,6 +32,10 @@ import discount from '../views/discount/discount'
 import footprint from '../views/footprint/footprint'
 import myCase from '../views/myCase/myCase'
 import orderDetail from '../views/orderDetail/orderDetail'
+import login from '../views/login/login'
+import telephoneLogin from '../views/login/children/telephoneLogin/telephoneLogin'
+import passwordReturn from '../views/login/children/password-return/password-return'
+import register from '../views/register/register'
 
 const routes = [
   { path: '/', redirect: 'home' },
@@ -66,8 +70,11 @@ const routes = [
   { name: 'discount', path: '/discount', component: discount },
   { name: 'footprint', path: '/footprint', component: footprint },
   { name: 'myCase', path: '/myCase', component: myCase },
-  { name: 'orderDetail', path: '/orderDetail', component: orderDetail, props: true }
-
+  { name: 'orderDetail', path: '/orderDetail', component: orderDetail, props: true },
+  { name: 'login', path: '/login', component: login },
+  { name: 'telephoneLogin', path: '/telephoneLogin', component: telephoneLogin },
+  { name: 'passwordReturn', path: '/passwordReturn', component: passwordReturn },
+  { name: 'register', path: '/register', component: register }
 ]
 Vue.use(VueRouter)
 const router = new VueRouter({
