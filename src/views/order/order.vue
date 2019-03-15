@@ -170,154 +170,155 @@ export default {
 </script>
 
 <style lang="stylus">
-.cube-tab-bar
-  width 100%
-  height 3.5rem
-  line-height 3.5rem
-  max-width 640px
-  text-align center
-  background-color #fff
-  .cube-tab_active
-    color #ed4529
-    font-size 1.2rem
-.tab-slide-container
-  position fixed
-  top 3.5rem
-  left 0
-  right 0
-  bottom 0
-  .cube-slide-item
-    .none-page
-      overflow hidden
+  .order
+    .cube-tab-bar
       width 100%
+      height 3.5rem
+      line-height 3.5rem
       max-width 640px
-      height 100%
+      text-align center
       background-color #fff
-      padding 5rem 0 0
-      margin-top 1.1em
-      .banner
-        width 10rem
-        height 8rem
-        background url('./order_empty@3x.png') no-repeat center
-        background-size contain
-        margin 2rem auto 2rem
-      .banner-tips
-        text-align center
-        color #a5a5a5
-.order-all-scroll
-  height 100%
-  .cart-elms
-    width 100%
-    .cart-elm
-      width 100%
-      background-color #fff
-      margin-top 0.6rem
-      .cart-elm-top
-        width 100%
-        height 3rem
-        position relative
-        padding-left 1.5rem
-        .icon-shop
-          left 5%
-          width 1.5rem
-          height 1.5rem
-          background url('./shops-logo.png') center no-repeat
-          background-size contain
-        .shop-name
-          height 3rem
-          line-height 3rem
-          font-size 1.2rem
-          margin-left 2rem
-        .fl
-          float left
-        .shop-product-status
-          width 30%
-          height 3rem
-          line-height 3rem
-          color #ed4529
-          float right
-          text-align right
-          padding-right 1.5rem
-      .cart-elm-content
-        width: 100%
-        .cart-products
+      .cube-tab_active
+        color #ed4529
+        font-size 1.2rem
+    .tab-slide-container
+      position fixed
+      top 3.5rem
+      left 0
+      right 0
+      bottom 0
+      .cube-slide-item
+        .none-page
+          overflow hidden
           width 100%
+          max-width 640px
           height 100%
-          .cart-product
-            width 100%
+          background-color #fff
+          padding 5rem 0 0
+          margin-top 1.1em
+          .banner
+            width 10rem
             height 8rem
+            background url('./order_empty@3x.png') no-repeat center
+            background-size contain
+            margin 2rem auto 2rem
+          .banner-tips
+            text-align center
+            color #a5a5a5
+    .order-all-scroll
+      height 100%
+      .cart-elms
+        width 100%
+        .cart-elm
+          width 100%
+          background-color #fff
+          margin-top 0.6rem
+          .cart-elm-top
+            width 100%
+            height 3rem
             position relative
-            .cart-product-content
+            padding-left 1.5rem
+            .icon-shop
+              left 5%
+              width 1.5rem
+              height 1.5rem
+              background url('./shops-logo.png') center no-repeat
+              background-size contain
+            .shop-name
+              height 3rem
+              line-height 3rem
+              font-size 1.2rem
+              margin-left 2rem
+            .fl
+              float left
+            .shop-product-status
+              width 30%
+              height 3rem
+              line-height 3rem
+              color #ed4529
+              float right
+              text-align right
+              padding-right 1.5rem
+          .cart-elm-content
+            width: 100%
+            .cart-products
               width 100%
               height 100%
-              .cart-product-detail
-                height 100%
+              .cart-product
+                width 100%
+                height 8rem
                 position relative
-                border-top 1px solid #F4F4F4
-                .cart-product-img
-                  width 6rem
-                  height 6rem
-                  left 0.5rem
-                  img
-                    width 100%
-                    vertical-align middle
-                .cart-product-text
-                  margin-left 7rem
+                .cart-product-content
+                  width 100%
                   height 100%
-                  padding 1.5rem 1.5rem 1.5rem 0
-                  div
-                    .cart-product-name
-                      width 80%
-                      display inline-block
-                      font-size 1rem
-                      white-space nowrap
-                      overflow hidden
-                      text-overflow ellipsis
-                    .fr
-                      float right
-                  .cart-product-guige
-                    width 100%
-                    height 1rem
-                    line-height 1rem
-                    font-size 1rem
-                  .cart-product-price
-                    color #ed4529
-                    font-size 1rem
-                    position absolute
-                    bottom 1.5rem
+                  .cart-product-detail
+                    height 100%
+                    position relative
+                    border-top 1px solid #F4F4F4
+                    .cart-product-img
+                      width 6rem
+                      height 6rem
+                      left 0.5rem
+                      img
+                        width 100%
+                        vertical-align middle
+                    .cart-product-text
+                      margin-left 7rem
+                      height 100%
+                      padding 1.5rem 1.5rem 1.5rem 0
+                      div
+                        .cart-product-name
+                          width 80%
+                          display inline-block
+                          font-size 1rem
+                          white-space nowrap
+                          overflow hidden
+                          text-overflow ellipsis
+                        .fr
+                          float right
+                      .cart-product-guige
+                        width 100%
+                        height 1rem
+                        line-height 1rem
+                        font-size 1rem
+                      .cart-product-price
+                        color #ed4529
+                        font-size 1rem
+                        position absolute
+                        bottom 1.5rem
 
-      .cart-product-footer
-        width 100%
-        height 3.5rem
-        line-height 3.5rem
-        border-top 1px solid #e5e5e5
-        .cart-product-footer-left
-          width 60%
-          height 3.5rem
-          line-height 3.5rem
-          float left
-          text-align right
-        .cart-product-footer-right
-          width 35%
-          height 3.5rem
-          line-height 3.5rem
-          float left
-          margin 0 2.5%
-      .cart-btn
-        width 100%
-        height 3.5rem
-        border-top 1px solid #e5e5e5
-        .right-btn
-          float right
-          border 1px solid #ed4529
-          outline none
-          width 6rem
-          text-align center
-          height 2.5rem
-          line-height 2.5rem
-          margin .5rem .8rem .5rem .4rem
-          color #ed4529
-          background-color #fff
-          border-radius 5%
-          font-size 1rem
+          .cart-product-footer
+            width 100%
+            height 3.5rem
+            line-height 3.5rem
+            border-top 1px solid #e5e5e5
+            .cart-product-footer-left
+              width 60%
+              height 3.5rem
+              line-height 3.5rem
+              float left
+              text-align right
+            .cart-product-footer-right
+              width 35%
+              height 3.5rem
+              line-height 3.5rem
+              float left
+              margin 0 2.5%
+          .cart-btn
+            width 100%
+            height 3.5rem
+            border-top 1px solid #e5e5e5
+            .right-btn
+              float right
+              border 1px solid #ed4529
+              outline none
+              width 6rem
+              text-align center
+              height 2.5rem
+              line-height 2.5rem
+              margin .5rem .8rem .5rem .4rem
+              color #ed4529
+              background-color #fff
+              border-radius 5%
+              font-size 1rem
 </style>

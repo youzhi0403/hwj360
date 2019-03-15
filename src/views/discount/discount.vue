@@ -135,86 +135,87 @@ export default {
 </script>
 
 <style lang="stylus">
-  .cube-tab-bar
-    width 100%
-    height 4rem
-    line-height 4rem
-    max-width 640px
-    text-align center
-    background-color #fff
-    font-size 1.2rem
-    .cube-tab_active
-      color #ed4529
-  .tab-slide-container
-    position fixed
-    top 4.6rem
-    left 0
-    right 0
-    bottom 0
-    .cube-slide-item
-      .none-page
-        overflow hidden
-        width 100%
-        max-width 640px
-        height 100%
-        background-color #fff
-        padding 5rem 0 0
-        margin-top 0
-        .banner
-          width 10rem
-          height 8rem
-          background url('./ticket_empty@3x.png') no-repeat center
-          background-size contain
-          margin 2rem auto 2rem
-        .banner-tips
-          text-align center
-          color #a5a5a5
-.coupon-scroll
-  height 100%
-  .coupon-container-item
-    width 100%
-    background-color #fff
-    line-height 1.6
-    .coupon-item
+  .discount
+    .cube-tab-bar
       width 100%
-      position relative
-      padding 1.5rem 1.2rem 0
-      .coupon-item-content
-        width 100%
-        position relative
-        img
-          width 100%
-          vertical-align middle
-        .coupon-content
-          position absolute
-          top 2rem
-          left 1rem
-          color #fff
-          .coupon-item-num
-            font-size 1.5rem
-          .coupon-item-time
-            font-size 0.8rem
-            margin-top 0.2rem
-      .coupon-detail
-        height 3rem
-        color #fff
-        position absolute
-        width 100%
-        bottom 0
-        float left
-        .coupon-detail-text
-          white-space nowrap
+      height 4rem
+      line-height 4rem
+      max-width 640px
+      text-align center
+      background-color #fff
+      font-size 1.2rem
+      .cube-tab_active
+        color #ed4529
+    .tab-slide-container
+      position fixed
+      top 4.6rem
+      left 0
+      right 0
+      bottom 0
+      .cube-slide-item
+        .none-page
           overflow hidden
-          text-overflow ellipsis
-          font-size 1rem
-          left 1rem
-          right 3rem
-        .icon-down
-          position absolute
-          right 1rem
-          width 1rem
-          top 0
+          width 100%
+          max-width 640px
           height 100%
-          background url('./arrow_down_white@3x.png') no-repeat center
-          background-size contain
+          background-color #fff
+          padding 5rem 0 0
+          margin-top 0
+          .banner
+            width 10rem
+            height 8rem
+            background url('./ticket_empty@3x.png') no-repeat center
+            background-size contain
+            margin 2rem auto 2rem
+          .banner-tips
+            text-align center
+            color #a5a5a5
+    .coupon-scroll
+      height 100%
+      .coupon-container-item
+        width 100%
+        background-color #fff
+        line-height 1.6
+        .coupon-item
+          width 100%
+          position relative
+          padding 1.5rem 1.2rem 0
+          .coupon-item-content
+            width 100%
+            position relative
+            img
+              width 100%
+              vertical-align middle
+            .coupon-content
+              position absolute
+              top 2rem
+              left 1rem
+              color #fff
+              .coupon-item-num
+                font-size 1.5rem
+              .coupon-item-time
+                font-size 0.8rem
+                margin-top 0.2rem
+          .coupon-detail
+            height 3rem
+            color #fff
+            position absolute
+            width 100%
+            bottom 0
+            float left
+            .coupon-detail-text
+              white-space nowrap
+              overflow hidden
+              text-overflow ellipsis
+              font-size 1rem
+              left 1rem
+              right 3rem
+            .icon-down
+              position absolute
+              right 1rem
+              width 1rem
+              top 0
+              height 100%
+              background url('./arrow_down_white@3x.png') no-repeat center
+              background-size contain
 </style>
