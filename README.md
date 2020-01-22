@@ -6,13 +6,13 @@
 
 # 整体效果
 首页  
-![Image text](https://github.com/youzhi0403/hw360/blob/master/README_PICTURE/p1.png)  
+![Image text](https://github.com/youzhi0403/hwj360/blob/master/README_PICTURE/p1.png)  
 分类  
-![Image text](https://github.com/youzhi0403/hw360/blob/master/README_PICTURE/p2.png)  
+![Image text](https://github.com/youzhi0403/hwj360/blob/master/README_PICTURE/p2.png)  
 购物车  
-![Image text](https://github.com/youzhi0403/hw360/blob/master/README_PICTURE/p3.png)  
+![Image text](https://github.com/youzhi0403/hwj360/blob/master/README_PICTURE/p3.png)  
 商品详情  
-![Image text](https://github.com/youzhi0403/hw360/blob/master/README_PICTURE/p4.png)  
+![Image text](https://github.com/youzhi0403/hwj360/blob/master/README_PICTURE/p4.png)  
 
 # 技术栈
 1.vue version-3.30  
