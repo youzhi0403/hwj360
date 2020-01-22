@@ -207,7 +207,6 @@ export default {
     position absolute
     top 3rem
     bottom 3.5rem
-    left 0
     width 100%
     max-width 640px
     overflow hidden

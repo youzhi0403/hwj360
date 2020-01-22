@@ -129,7 +129,7 @@ export default {
     background-color #fff
     .top-bar
       position fixed
-      max-width 750px
+      max-width 640px
       top 0
       right auto
       bottom auto
@@ -259,7 +259,7 @@ export default {
   .integral-change-record
     .record-empty
       position fixed
-      max-width 750px
+      max-width 640px
       top 0.92rem
       right auto
       bottom 0
@@ -280,7 +280,7 @@ export default {
         font-size 1.4rem
   .integral-rule-bomb-screen
     position fixed
-    max-width 750px
+    max-width 640px
     top 0
     right auto
     bottom 0
