@@ -17,15 +17,15 @@
 ![Image text](https://github.com/youzhi0403/hw360/blob/master/README_PICTURE/p5.png)  
 
 # 技术栈
-1.vue version-3.30
-2.node version-10.13.0
-3.vue cli 3.0
-4.cube-ui
+1.vue version-3.30  
+2.node version-10.13.0  
+3.vue cli 3.0  
+4.cube-ui  
 
 # 待完成的模块
-1.抽奖大转盘
-2.客服模块
-3.个人信息编辑页面 生日项，性别项的popup
+1.抽奖大转盘  
+2.客服模块  
+3.个人信息编辑页面 生日项，性别项的popup  
 
 # 总结
-暂时告一段落，从2019年2月2号开始，到今天3月5号，历时一个多月。
+暂时告一段落，从2019年2月2号开始，到今天3月5号，历时一个多月。  
